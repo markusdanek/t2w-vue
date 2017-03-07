@@ -19,19 +19,19 @@ nav.navbar.scroll {
 	}
 
 	h1 a.navbar-brand {
-		background: url("./../assets/logo/team2work.svg") no-repeat;
-		font-family: "ASans";
+		background: url("/static/images/logo/team2work.svg") no-repeat;
+		font-family: 'Open Sans';
 	}
 }
 
 h1 a.navbar-brand {
 	@include transition(all 0.5s ease);
 	text-indent: -999px;
-	background: url("./../assets/logo/team2work-white.svg") no-repeat;
+	background: url("/static/images/logo/team2work-white.svg") no-repeat;
 	display: block;
 	width: 220px;
 	height: 130px;
-	font-family: "ASans";
+	font-family: 'Open Sans';
 
 	&.shrink {
 		@include transition(all 0.5s ease);

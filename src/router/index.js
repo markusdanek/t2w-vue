@@ -13,3 +13,7 @@ export default new Router({
     }
   ]
 })
+
+// Router.beforeEach(function () {
+//   window.scrollTo(0, 0)
+// })

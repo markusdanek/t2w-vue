@@ -26,6 +26,13 @@ module.exports = {
       'styles': path.resolve(__dirname, './src/style/')
     }
   },
+  // plugins: [
+  //   new webpack.ProvidePlugin({
+  //     $: "jquery",
+  //     jQuery: "jquery",
+  //     "window.jQuery": "jquery"
+  //   }),
+  // ],
   module: {
     rules: [
       {

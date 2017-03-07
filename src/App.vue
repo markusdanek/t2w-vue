@@ -1,3 +1,4 @@
+<!-- HTML -->
 <template>
 <div id="app">
   <nav class="navbar navbar-fixed-top">
@@ -104,14 +105,20 @@
       </div>
     </div>
   </div>
-
 </div>
 </template>
 
+<!-- Vue script -->
 <script>
-export default {
-  name: 'app'
-}
+  export default {
+    name: 'app',
+    mounted() {
+      $(document).ready(function () {
+        console.log("document ready");
+      })
+    }
+  }
 </script>
 
-Error: Source sample is missing.<style lang="scss" src="./styles/main.scss"></style>
+<!-- Stylesheet -->
+<style lang="scss" src="./styles/main.scss"></style>
