@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }} <span>asfd</span></h1>
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 
@@ -9,10 +9,8 @@
     name: 'home',
     data () {
       return {
-        msg: 'team2work'
+        msg: ' '
       }
     }
   }
 </script>
-
-<!-- <style lang="scss" src="../styles/layout/basic.scss"></style> -->
