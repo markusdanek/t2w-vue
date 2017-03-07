@@ -113,9 +113,16 @@
   export default {
     name: 'app',
     mounted() {
-      $(document).ready(function () {
-        console.log("document ready");
-      })
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 80) {
+          $('nav.navbar').addClass('scroll');
+          $('h1 a.navbar-brand').addClass('shrink');
+        }
+        else {
+          $('nav.navbar').removeClass('scroll');
+          $('h1 a.navbar-brand').removeClass('shrink');
+        }
+      });
     }
   }
 </script>
