@@ -48,6 +48,7 @@
     "style-loader": "0.13.2",
     "url-loader": "0.5.8",
     "vue-loader": "^11.1.4",
+    "vue-resource": "1.2.1",
     "vue-style-loader": "^2.0.0",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.1",

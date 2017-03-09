@@ -5,12 +5,11 @@
         <h2 class="title">
           Die aktuellsten Stellenanzeigen für Sie
         </h2>
-        <!-- <hr /> -->
         <div class="col-md-12">
           <ul class="jobs">
-            <li class="col-md-5 col-md-offset-1">
+            <li class="col-md-5 col-md-offset-1" v-for="job in limitedJobs">
               <div class="title col-sm-11">
-                Job title
+                {{ job.title }}
               </div>
               <router-link to="">
                 <div class="link col-sm-1">
@@ -29,11 +28,60 @@
   </div>
 </template>
 
+<script>
+  export default {
+    data() {
+      return {
+        jobs: [],
+        loading: false,
+        limitNumber: 4
+      }
+    },
+    filters: {
+      limit: function(arr, limit) {
+        return arr.slice(0, limit)
+      }
+    },
+    computed: {
+      limitedJobs() {
+        return this.jobs.slice(0,this.limitNumber)
+      }
+    },
+    created() {
+      this.retrieveJobs();
+    },
+    methods: {
+      shuffleArray: function(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+          while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+          }
+        return array;
+      },
+      retrieveJobs() {
+        this.loading = true;
+        this.$http.get('http://t2w-node.herokuapp.com/api/jobs/json').then(response => {
+          this.jobs = response.data;
+          this.jobs = this.shuffleArray(this.jobs);
+        }, response => {
+          console.log("Error", response);
+        }).then(_ => {
+          this.loading = false;
+        });
+      }
+    }
+  }
+</script>
+
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 
   .jobs-overview {
-  	@include rem((margin-bottom: 60px));
+  	@include rem((padding-bottom: 60px));
 
   	h2.title {
   		@include rem((margin: 60px 0 40px 0));
@@ -84,26 +132,29 @@
   			}
   		}
   	}
-  }
+    a.btn-more-jobs {
+    	@include transition(all 0.5s ease);
+    	@include rem((margin-right: 15px));
+    	background: transparent;
+    	color: $color-black-medium;
+    	border-radius: 0;
+    	border: 2px solid $color-red-t2w;
 
-  a.btn-more-jobs {
-  	@include transition(all 0.5s ease);
-  	@include rem((margin-right: 15px));
-  	background: transparent;
-  	color: $color-black-medium;
-  	border-radius: 0;
-  	border: 2px solid $color-red-t2w;
-
-  	&:hover {
-  		@include transition(all 0.5s ease);
-  		background: $color-red-t2w;
-  		border: 2px solid $color-red-t2w;
-  		color: $color-white;
-  	}
+    	&:hover {
+    		@include transition(all 0.5s ease);
+    		background: $color-red-t2w;
+    		border: 2px solid $color-red-t2w;
+    		color: $color-white;
+    	}
+    }
+    @media (max-width: $screen-md) {
+    	ul.jobs {
+    		@include rem((padding: 0));
+    	}
+    }
   }
-  @media (max-width: $screen-md) {
-  	ul.jobs {
-  		@include rem((padding: 0));
-  	}
+  hr {
+    margin: 0;
+    border-top: 3px solid $color-gray-light;
   }
 </style>

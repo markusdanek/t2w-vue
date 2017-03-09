@@ -64,7 +64,7 @@
   @import "../../styles/util/util.scss";
 
   .service-overview {
-    @include rem((margin: 60px auto 0px auto));
+    // @include rem((margin: 60px auto 0px auto));
 
     img.field-icons {
       @include rem((margin: 0 auto 40px auto));
@@ -74,7 +74,7 @@
     }
 
     h2.title {
-      @include rem((margin: 0px 0 40px 0));
+      @include rem((margin: 60px 0 40px 0));
       text-align: center;
       font-weight: bold;
     }
