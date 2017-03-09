@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import 'bootstrap-loader'
 import App from './App'
 import router from './router'
 import 'bootstrap-loader'
