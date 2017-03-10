@@ -30,12 +30,12 @@
 
 <script>
   import Vue from 'vue'
-  import Company_Tab_Layout from '@/components/company/tabs/Layout'
-  import Company_Tab_General from '@/components/company/tabs/General'
-  import Company_Tab_Consulting from '@/components/company/tabs/Consulting'
-  import Company_Tab_Leasing from '@/components/company/tabs/Leasing'
-  import Company_Tab_Test from '@/components/company/tabs/Test'
-  import Company_Tab_Payroll from '@/components/company/tabs/Payroll'
+  import Company_Tab_Layout from '@/components/company/tab/Layout'
+  import Company_Tab_General from '@/components/company/tab/General'
+  import Company_Tab_Consulting from '@/components/company/tab/Consulting'
+  import Company_Tab_Leasing from '@/components/company/tab/Leasing'
+  import Company_Tab_Test from '@/components/company/tab/Test'
+  import Company_Tab_Payroll from '@/components/company/tab/Payroll'
   Vue.component('company-tab-general', Company_Tab_General);
   Vue.component('company-tab-consulting', Company_Tab_Consulting);
   Vue.component('company-tab-leasing', Company_Tab_Leasing);

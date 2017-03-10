@@ -8,7 +8,7 @@
 <script>
   import Vue from 'vue'
   import Company_Hero from '@/components/company/Hero'
-  import Company_Tab from '@/components/company/tabs/Layout'
+  import Company_Tab from '@/components/company/tab/Layout'
   Vue.component('company-hero', Company_Hero);
   Vue.component('company-tab', Company_Tab);
 

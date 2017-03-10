@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Home from '@/components/home/Layout'
 import Company from '@/components/company/Layout'
+import Applicants from '@/components/applicants/Layout'
 import About from '@/components/about/Layout'
 import Contact from '@/components/contact/Layout'
 
@@ -19,6 +20,11 @@ export default new Router({
       path: '/unternehmen',
       name: 'Company',
       component: Company
+    },
+    {
+      path: '/bewerber',
+      name: 'Applicants',
+      component: Applicants
     },
     {
       path: '/ueber',
