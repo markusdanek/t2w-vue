@@ -43,11 +43,11 @@ Vue.component('contact-hero', Contact_Hero);
 Vue.component('contact-info', Contact_Info);
 Vue.component('company-hero', Company_Hero);
 Vue.component('company-tabs', Company_Tabs);
-Vue.component('company-tabs-general', Company_Tabs_General);
-Vue.component('company-tabs-consulting', Company_Tabs_Consulting);
-Vue.component('company-tabs-leasing', Company_Tabs_Leasing);
-Vue.component('company-tabs-test', Company_Tabs_Test);
-Vue.component('company-tabs-payroll', Company_Tabs_Payroll);
+Vue.component('company-tab-general', Company_Tabs_General);
+Vue.component('company-tab-consulting', Company_Tabs_Consulting);
+Vue.component('company-tab-leasing', Company_Tabs_Leasing);
+Vue.component('company-tab-test', Company_Tabs_Test);
+Vue.component('company-tab-payroll', Company_Tabs_Payroll);
 
 Vue.use(Router)
 

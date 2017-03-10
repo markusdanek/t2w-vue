@@ -28,7 +28,7 @@
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
   @import "../../../styles/util/util.scss";
 
   .wrapper {
