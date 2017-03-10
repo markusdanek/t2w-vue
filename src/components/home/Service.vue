@@ -64,41 +64,34 @@
   @import "../../styles/util/util.scss";
 
   .service-overview {
-    // @include rem((margin: 60px auto 0px auto));
-
+    @include rem((padding-top: 60px));
+    @include rem((padding-bottom: 40px));
     img.field-icons {
       @include rem((margin: 0 auto 40px auto));
       width: 100px;
       height: 100px;
       display: block;
     }
-
     h2.title {
-      @include rem((margin: 60px 0 40px 0));
       text-align: center;
       font-weight: bold;
     }
-
     .text {
       @include rem((margin-top: 50px));
       @include rem((margin-bottom: 50px));
-
       h3,
       p {
         text-align: center;
         display: block;
       }
-
       span {
         text-align: center;
       }
-
       h3 {
         a {
           @include rem((margin-bottom: 20px));
           color: $color-black-medium;
           @include rem(font-size, 24px);
-
           &:hover {
             color: $color-black-medium;
             cursor: pointer;

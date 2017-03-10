@@ -22,14 +22,12 @@
   	overflow-x: hidden;
   	overflow-y: auto;
   }
-
   html {
   	@include rem(font-size, 18px);
   	-webkit-font-smoothing: antialiased;
   	position: relative;
   	min-height: 100%;
   }
-
   body {
   	@include rem((padding-top: 80px));
   	font-family: $font-regular, "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
@@ -37,7 +35,6 @@
   	border-right: 10px solid $color-red-t2w;
   	background: $color-background;
   }
-
   .container {
   	@include rem((padding: 0));
   }
@@ -47,7 +44,6 @@
   		width: 100%;
   	}
   }
-
   %button {
   	@include rem(font-size, 14px);
   	@include rem((padding-top: 0 10px));
@@ -61,15 +57,16 @@
   	display: inline-block;
   	height: auto;
   	cursor: pointer;
-
   	&:hover {
   		opacity: 1;
   		text-decoration: inherit;
   	}
   }
-
   span.two {
   	color: $color-red-t2w;
   }
-
+  hr {
+    margin: 0;
+    border-top: 3px solid $color-gray-light;
+  }
 </style>

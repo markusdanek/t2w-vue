@@ -1,20 +1,14 @@
 <template>
-  <div class="section-hero">
+  <div class="section-hero small">
     <div class="hero-image">
-      <div class="image-src" style="background-image: url('./static/images/hero/hero-home.jpg')"></div>
+      <div class="image-src" style="background-image: url('./static/images/hero/hero-about.jpg')"></div>
     </div>
     <div class="container">
       <div class="hero-text">
         <div class="text container">
           <h1 class="startpage">
-            Arbeit auf Zeit,<br />
-            Erfolg auf Dauer
+            Das team<span class="two">2</span>work Team für Ihren Erfolg
           </h1>
-          <h2 class="startpage">
-            Egal, ob Sie qualifizierte Mitarbeiter suchen oder eine neue Arbeitsstelle finden wollen: <br/>
-            Wir kennen die Menschen und Unternehmen, die sich erfolgreich ergänzen.
-            Für technische, kaufmännische und gewerbliche Personallösungen.
-          </h2>
         </div>
       </div>
     </div>

@@ -82,38 +82,31 @@
 
   .jobs-overview {
   	@include rem((padding-bottom: 60px));
-
   	h2.title {
   		@include rem((margin: 60px 0 40px 0));
   		text-align: center;
   		font-weight: bold;
   	}
-
   	ul.jobs {
   		@include rem((margin-top: 14px));
   		@include rem((margin-bottom: 14px));
-
   		li {
   			@include rem((margin-bottom: 30px));
   			@include rem((padding: 0));
   			background: $color-gray-light;
   			list-style-type: none;
-
   			.title {
   				display: flex;
   				align-items: center;
   				min-height: 80px;
   			}
-
   			a {
   				color: $color-black-medium;
   				text-align: center;
   				display: block;
-
   				&:hover {
   					text-decoration: none;
   				}
-
   				.link {
   					@include rem((padding: 0));
   					@include rem((margin: 0));
@@ -123,7 +116,6 @@
   					align-items: center;
   					justify-content: center;
   					background: $color-gray-medium;
-
   					&:hover {
   						@include transition(all 0.5s ease);
   						background: rgba($color-black-medium, 0.3);
@@ -139,7 +131,6 @@
     	color: $color-black-medium;
     	border-radius: 0;
     	border: 2px solid $color-red-t2w;
-
     	&:hover {
     		@include transition(all 0.5s ease);
     		background: $color-red-t2w;
@@ -152,9 +143,5 @@
     		@include rem((padding: 0));
     	}
     }
-  }
-  hr {
-    margin: 0;
-    border-top: 3px solid $color-gray-light;
   }
 </style>
