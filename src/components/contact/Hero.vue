@@ -15,6 +15,12 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: 'contact-hero'
+  }
+</script>
+
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 

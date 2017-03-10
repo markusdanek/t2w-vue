@@ -1,14 +1,20 @@
 <template>
   <div>
     <company-hero></company-hero>
-    <company-tabs></company-tabs>
+    <company-tab></company-tab>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'company'
-}
+  import Vue from 'vue'
+  import Company_Hero from '@/components/company/Hero'
+  import Company_Tab from '@/components/company/tabs/Layout'
+  Vue.component('company-hero', Company_Hero);
+  Vue.component('company-tab', Company_Tab);
+
+  export default {
+    name: 'company'
+  }
 </script>
 
 <style scoped lang="scss">

@@ -8,9 +8,17 @@
 </template>
 
 <script>
-export default {
-  name: 'about'
-}
+  import Vue from 'vue'
+  import About_Hero from '@/components/about/Hero'
+  import About_Employee from '@/components/about/Employee'
+  import About_Text from '@/components/about/Text'
+  Vue.component('about-hero', About_Hero);
+  Vue.component('about-employee', About_Employee);
+  Vue.component('about-text', About_Text);
+  
+  export default {
+    name: 'about'
+  }
 </script>
 
 <style scoped lang="scss">

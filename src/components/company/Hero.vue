@@ -15,6 +15,12 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: 'company-hero'
+  }
+</script>
+
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 

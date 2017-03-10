@@ -9,6 +9,12 @@
 </template>
 
 <script>
+  import Vue from 'vue'
+  import App_Header from '@/components/app/Header'
+  import App_Footer from '@/components/app/Footer'
+  Vue.component('app-header', App_Header);
+  Vue.component('app-footer', App_Footer);
+
   export default {
     name: 'app'
   }

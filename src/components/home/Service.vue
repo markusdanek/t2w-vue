@@ -60,6 +60,12 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: 'home-service'
+  }
+</script>
+
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 

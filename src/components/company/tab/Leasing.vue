@@ -32,3 +32,9 @@
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'company-tab-leasing'
+  }
+</script>

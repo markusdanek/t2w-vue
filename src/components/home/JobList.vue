@@ -30,6 +30,7 @@
 
 <script>
   export default {
+    name: 'home-joblist',
     data() {
       return {
         jobs: [],

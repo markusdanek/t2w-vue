@@ -25,3 +25,9 @@
   </div>
 </div>
 </template>
+
+<script>
+  export default {
+    name: 'company-tab-payroll'
+  }
+</script>
