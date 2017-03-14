@@ -24,10 +24,8 @@
               </p>
             </div>
           </div>
-          <div class="maps col-sm-6">
-            <gmap-map :center="center" :zoom="16" style="width: 100%; height: 500px" :options="{scrollwheel: false}">
-              <gmap-marker v-for="m in markers" :key="markers.id" :position="m.position" :clickable="false" :draggable="false"></gmap-marker>
-            </gmap-map>
+          <div class="col-sm-6">
+            <contact-maps></contact-maps>
           </div>
         </div>
       </div>
@@ -35,29 +33,13 @@
   </div>
 </template>
 
-
-
-
 <script>
-  import Vue from 'vue';
-  import * as VueGoogleMaps from 'vue2-google-maps';
-
-  Vue.use(VueGoogleMaps, {
-    load: {
-      key: 'AIzaSyD8cbYKedLTOAsQVesi7QYWFPl7ZJvrt10'
-    }
-  });
+  import Vue from 'vue'
+  import Contact_Maps from '@/components/contact/Maps'
+  Vue.component('contact-maps', Contact_Maps);
 
   export default {
-    name: 'contact-info',
-    data () {
-      return {
-        center: {lat: 48.1951244, lng: 16.336835},
-        markers: [{
-          position: {lat: 48.1951244, lng: 16.336835}
-        }]
-      }
-    }
+    name: 'contact-info'
   }
 </script>
 
