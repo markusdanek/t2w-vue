@@ -9,15 +9,27 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-          <h1><a class="navbar-brand" href="#/">team2work</a></h1>
+          <h1>
+            <router-link to="/" class="navbar-brand">team2work</router-link>
+          </h1>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="nav-link" href="#/unternehmen">Für Unternehmen</a></li>
-            <li><a class="nav-link" href="#/bewerber">Für Bewerber</a></li>
-            <li><a class="nav-link" href="#/ueber">Über uns</a></li>
-            <li><a class="nav-link" href="#/jobs">Jobs</a></li>
-            <li><a class="nav-link" href="#/kontakt">Kontakt</a></li>
+            <li>
+              <router-link to="unternehmen" class="nav-link">Für Unternehmen</router-link>
+            </li>
+            <li>
+              <router-link to="bewerber" class="nav-link">Für Bewerber</router-link>
+            </li>
+            <li>
+              <router-link to="ueber" class="nav-link">Über Uns</router-link>
+            </li>
+            <li>
+              <router-link to="jobs" class="nav-link">Jobs</router-link>
+            </li>
+            <li>
+              <router-link to="kontakt" class="nav-link">Kontakt</router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -25,7 +37,6 @@
   </nav>
 </template>
 
-<!-- Vue script -->
 <script>
   export default {
     mounted() {
@@ -52,26 +63,21 @@
   	background: transparent;
   	border-right: 10px solid $color-red-t2w;
   }
-
   nav.navbar.scroll {
   	@include transition(all 0.5s ease);
   	background: $color-white;
   	box-shadow: 0 1px 3px rgba(0,0,0,.1);
-
   	.nav > li > a {
   		color: $color-black-medium;
-
   		&:hover {
   			text-decoration: underline;
   		}
   	}
-
   	h1 a.navbar-brand {
   		background: url("/static/images/logo/team2work.svg") no-repeat;
   		font-family: 'Open Sans';
   	}
   }
-
   h1 a.navbar-brand {
   	@include transition(all 0.5s ease);
   	text-indent: -999px;
@@ -93,24 +99,29 @@
   		height: 80px;
   	}
   }
-
   .navbar-right {
   	@include rem((margin: 15px 15px 0 0));
   }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
   	.navbar-right {
   		@include rem((margin: -65px -50px 0 0));
   	}
   }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
   	.navbar-right {
   		@include rem((margin: -65px -50px 0 0));
   	}
   }
-
   .nav > li > a {
   	color: $color-white;
-
   	&:focus,
   	&:hover {
   		@include transition(all .3s ease);
@@ -120,21 +131,17 @@
   		border-bottom: none;
   	}
   }
-
   .navbar-toggle {
   	@include rem((margin-top: 27px));
-
   	.icon-bar {
   		background-color: $color-red-t2w;
   	}
   }
-
   .navbar-collapse.in {
   	background: $color-white;
   	@include rem((margin: 0 -15px));
   	@include rem((padding: 0 30px));
   	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
   	.nav > li > a {
   		color: $color-black-medium;
   	}
@@ -153,9 +160,7 @@
   		top: -65px;
   	}
   }
-
   .navbar-collapse.in .nav > li > a:hover {
   	text-decoration: underline;
   }
-
 </style>

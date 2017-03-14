@@ -10,22 +10,22 @@
               </p>
               <ul class="links">
                 <li>
-                  <a href="#/unternehmen">Für Unternehmen</a>
+                  <router-link to="unternehmen">Für Unternehmen</router-link>
                 </li>
                 <li>
-                  <a href="#/bewerber">Für Bewerber</a>
+                  <router-link to="bewerber">Für Bewerber</router-link>
                 </li>
                 <li>
-                  <a href="#/ueber">Über Uns</a>
+                  <router-link to="ueber">Über Uns</router-link>
                 </li>
                 <li>
-                  <a href="#/jobs">Jobs</a>
+                  <router-link to="jobs">Jobs</router-link>
                 </li>
                 <li>
-                  <a href="#/kontakt">Kontakt</a>
+                  <router-link to="kontakt">Kontakt</router-link>
                 </li>
                 <li>
-                  <a href="#/impressum">Impressum</a>
+                  <router-link to="impressum">Impressum</router-link>
                 </li>
               </ul>
             </div>
@@ -59,7 +59,7 @@
           <div class="copy col-sm-12 col-md-offset-1">
             <div class="col-sm-4">
               <p>
-                &copy; 2016 <strong>team<span class="two">2</span>work Arbeitskräfteüberlassung GmbH</strong> - Alle Rechte vorbehalten
+                &copy; {{year}} <strong>team<span class="two">2</span>work Arbeitskräfteüberlassung GmbH</strong> - Alle Rechte vorbehalten
               </p>
             </div>
             <div class="col-sm-4">
@@ -76,6 +76,19 @@
   </div>
 </template>
 
+<script>
+  export default {
+    computed: {
+      month() {
+        return this.twoDigits((new Date()).getUTCMonth() + 1);
+      },
+      year() {
+        return (new Date()).getUTCFullYear();
+      }
+    },
+  }
+</script>
+
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 
@@ -84,21 +97,17 @@
   		@include rem((padding: 40px 0));
   		background: $color-gray-light;
   		color: $color-black-medium;
-
   		p.title {
   			font-weight: bold;
   		}
-
   		ul {
   			&.links {
   				li {
   					display: block;
   					list-style-type: none;
-
   					a {
   						@include rem(font-size, 15px);
   						color: $color-black-medium;
-
   						&:hover {
   							border-bottom: 1px solid $color-red-t2w;
   							text-decoration: none;
@@ -106,16 +115,13 @@
   					}
   				}
   			}
-
   			&.contact {
   				li {
   					@include rem(font-size, 15px);
   					list-style-type: none;
-
   					a {
   						@include rem(font-size, 15px);
   						color: $color-black-medium;
-
   						&:hover {
   							border-bottom: 1px solid $color-red-t2w;
   							text-decoration: none;
@@ -124,20 +130,16 @@
   				}
   			}
   		}
-
   		.copy {
   			p {
   				@include rem(font-size, 15px);
-
   				span {
   					color: $color-red-t2w;
   				}
-
   				a {
   					@include rem(font-size, 15px);
   					text-decoration: none;
   					color: $color-black-medium;
-
   					&:hover {
   						border-bottom: 1px solid $color-red-t2w;
   						text-decoration: none;
@@ -152,5 +154,4 @@
   		}
   	}
   }
-
 </style>
