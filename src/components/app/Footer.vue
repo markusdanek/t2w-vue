@@ -10,22 +10,22 @@
               </p>
               <ul class="links">
                 <li>
-                  <router-link to="unternehmen">Für Unternehmen</router-link>
+                  <router-link to="/unternehmen">Für Unternehmen</router-link>
                 </li>
                 <li>
-                  <router-link to="bewerber">Für Bewerber</router-link>
+                  <router-link to="/bewerber">Für Bewerber</router-link>
                 </li>
                 <li>
-                  <router-link to="ueber">Über Uns</router-link>
+                  <router-link to="/ueber">Über Uns</router-link>
                 </li>
                 <li>
-                  <router-link to="jobs">Jobs</router-link>
+                  <router-link to="/jobs">Jobs</router-link>
                 </li>
                 <li>
-                  <router-link to="kontakt">Kontakt</router-link>
+                  <router-link to="/kontakt">Kontakt</router-link>
                 </li>
                 <li>
-                  <router-link to="impressum">Impressum</router-link>
+                  <router-link to="/impressum">Impressum</router-link>
                 </li>
               </ul>
             </div>

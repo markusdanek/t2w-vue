@@ -16,19 +16,19 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <router-link to="unternehmen" class="nav-link">Für Unternehmen</router-link>
+              <router-link to="/unternehmen" class="nav-link">Für Unternehmen</router-link>
             </li>
             <li>
-              <router-link to="bewerber" class="nav-link">Für Bewerber</router-link>
+              <router-link to="/bewerber" class="nav-link">Für Bewerber</router-link>
             </li>
             <li>
-              <router-link to="ueber" class="nav-link">Über Uns</router-link>
+              <router-link to="/ueber" class="nav-link">Über Uns</router-link>
             </li>
             <li>
-              <router-link to="jobs" class="nav-link">Jobs</router-link>
+              <router-link to="/jobs" class="nav-link">Jobs</router-link>
             </li>
             <li>
-              <router-link to="kontakt" class="nav-link">Kontakt</router-link>
+              <router-link to="/kontakt" class="nav-link">Kontakt</router-link>
             </li>
           </ul>
         </div>
