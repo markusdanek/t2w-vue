@@ -35,10 +35,16 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: 'about-text'
+  }
+</script>
+
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 
-  .about-text { 
+  .about-text {
     @include rem((padding-top: 60px));
     @include rem((padding-bottom: 60px));
     h2 {

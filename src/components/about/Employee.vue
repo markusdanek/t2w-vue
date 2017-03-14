@@ -64,6 +64,12 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: 'about-employee'
+  }
+</script>
+
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 

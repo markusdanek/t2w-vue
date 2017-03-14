@@ -1,13 +1,13 @@
 <template>
   <div class="section-hero small">
     <div class="hero-image">
-      <div class="image-src" style="background-image: url('./static/images/hero/hero-about.jpg')"></div>
+      <div class="image-src" style="background-image: url('./static/images/hero/hero-applicants.jpg')"></div>
     </div>
     <div class="container">
       <div class="hero-text">
         <div class="text container">
           <h1 class="startpage">
-            Das team<span class="two">2</span>work Team für Ihren Erfolg
+            Wir suchen Sie!
           </h1>
         </div>
       </div>
@@ -17,7 +17,7 @@
 
 <script>
   export default {
-    name: 'about-hero'
+    name: 'jobs-hero'
   }
 </script>
 
