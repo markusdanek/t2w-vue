@@ -1,8 +1,16 @@
 <template>
   <div>
     <jobs-hero></jobs-hero>
-    <jobs-list></jobs-list>
-    <jobs-pool></jobs-pool>
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-sm-11 col-sm-offset-1">
+          <div class="row job-block">
+            <jobs-list></jobs-list>
+            <jobs-pool></jobs-pool>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,5 +33,8 @@
 
   .wrapper {
   	background: $color-white;
+  }
+  .job-block {
+    @include rem((padding: 60px 0));
   }
 </style>
