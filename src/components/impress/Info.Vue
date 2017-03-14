@@ -23,7 +23,7 @@
   @import "../../styles/util/util.scss";
 
   .block {
-    @include rem((padding: 30px 0 30px 0));
+    @include rem((padding: 60px 0 30px 0));
     hr {
       @include rem((margin-top: 60px));
     }
