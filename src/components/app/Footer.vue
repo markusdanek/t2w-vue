@@ -78,6 +78,7 @@
 
 <script>
   export default {
+    name: 'footer',
     computed: {
       month() {
         return this.twoDigits((new Date()).getUTCMonth() + 1);
@@ -85,7 +86,7 @@
       year() {
         return (new Date()).getUTCFullYear();
       }
-    },
+    }
   }
 </script>
 

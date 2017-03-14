@@ -39,6 +39,7 @@
 
 <script>
   export default {
+    name: 'header',
     mounted() {
       $(window).scroll(function () {
         if ($(window).scrollTop() > 80) {

@@ -6,6 +6,7 @@ import Company from '@/components/company/Layout'
 import Applicants from '@/components/applicants/Layout'
 import About from '@/components/about/Layout'
 import Contact from '@/components/contact/Layout'
+import Impress from '@/components/impress/Layout'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/kontakt',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/impressum',
+      name: 'Impress',
+      component: Impress
     }
   ]
 })
