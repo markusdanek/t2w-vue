@@ -6,6 +6,7 @@ import Company from '@/components/company/Layout'
 import Applicants from '@/components/applicants/Layout'
 import About from '@/components/about/Layout'
 import Jobs from '@/components/jobs/Layout'
+import JobSingle from '@/components/jobsingle/Layout'
 import Contact from '@/components/contact/Layout'
 import Impress from '@/components/impress/Layout'
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/jobs',
       name: 'Jobs',
       component: Jobs
+    },
+    {
+      path:'/jobs/:id',
+      name: 'JobSingle',
+      component: JobSingle
     },
     {
       path: '/kontakt',

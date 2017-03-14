@@ -11,7 +11,7 @@
         <tbody>
           <tr v-for="job in jobs">
             <td class="jobtitle">
-              <router-link to="jobs/job._id">
+              <router-link :to="{name:'JobSingle', params:{id:job._id}}">
                 {{ job.title }} m/w
               </router-link>
               <p>{{ job.introText | truncate(150) }} </p>
