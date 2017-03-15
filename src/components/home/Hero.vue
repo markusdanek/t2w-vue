@@ -7,14 +7,10 @@
       <div class="hero-text">
         <div class="text container">
           <h1 class="startpage">
-            Arbeit auf Zeit,<br />
-            Erfolg auf Dauer
+            <span class="one">Überlassung, </span>
+            <span class="twoo">Vermittlung</span>
+            <span class="three">und Beratung</span>
           </h1>
-          <h2 class="startpage">
-            Egal, ob Sie qualifizierte Mitarbeiter suchen oder eine neue Arbeitsstelle finden wollen: <br/>
-            Wir kennen die Menschen und Unternehmen, die sich erfolgreich ergänzen.
-            Für technische, kaufmännische und gewerbliche Personallösungen.
-          </h2>
         </div>
       </div>
     </div>
@@ -34,7 +30,7 @@
   	@extend %hero;
   	height: 600px;
   	h1.startpage {
-  		@include rem(font-size, 46px);
+  		@include rem(font-size, 52px);
   		line-height: 56px;
   		font-family: 'Open Sans';
   		font-weight: bolder;
@@ -52,5 +48,30 @@
   			opacity: 0.6;
   		}
   	}
+  }
+  @-webkit-keyframes fadein{
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+   100% {
+     opacity: 1;
+     visibility: visible;
+   }
+  }
+  span.one {
+    visibility: hidden;
+    -webkit-animation: fadein 3s forwards;
+    animation-delay: 1s;
+  }
+  span.twoo {
+    visibility: hidden;
+    -webkit-animation: fadein 3s forwards;
+    animation-delay: 3s;
+  }
+  span.three {
+    visibility: hidden;
+    -webkit-animation: fadein 3s forwards;
+    animation-delay: 5s;
   }
 </style>
