@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "upload": "s3-deploy './build/**' --bucket www.team2work.at"
   },
   "dependencies": {
     "vue": "^2.2.1",
@@ -44,10 +45,12 @@
     "ora": "^1.1.0",
     "resolve-url-loader": "2.0.2",
     "rimraf": "^2.6.0",
+    "s3-deploy": "0.7.3",
     "sass-loader": "6.0.2",
     "semver": "^5.3.0",
     "style-loader": "0.13.2",
     "url-loader": "0.5.8",
+    "vue-awesome": "2.1.0",
     "vue-loader": "^11.1.4",
     "vue-resource": "1.2.1",
     "vue-style-loader": "^2.0.0",

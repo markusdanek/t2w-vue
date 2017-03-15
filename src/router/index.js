@@ -13,6 +13,7 @@ import Impress from '@/components/impress/Layout'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -54,9 +55,8 @@ export default new Router({
       name: 'Impress',
       component: Impress
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
-
-// Router.beforeEach(function () {
-//   window.scrollTo(0, 0)
-// })

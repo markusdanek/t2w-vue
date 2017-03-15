@@ -2,6 +2,7 @@
   <div>
     <home-hero></home-hero>
     <home-joblist></home-joblist>
+    <hr />
     <home-service></home-service>
     <home-testimonial></home-testimonial>
   </div>
@@ -33,5 +34,10 @@
 
   .wrapper {
   	background: $color-white;
+  }
+
+  hr {
+    @include rem((margin: 0));
+    border-top: 1px solid $color-gray-light;
   }
 </style>

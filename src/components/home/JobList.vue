@@ -13,22 +13,23 @@
               </div>
               <router-link to="">
                 <div class="link col-sm-1">
-                  <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i>
+                  <icon name="angle-right"></icon>
                 </div>
               </router-link>
             </li>
           </ul>
         </div>
         <router-link to="" class="btn-more-jobs btn btn-danger pull-right">
-          Alle Stellenanzeigen &nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
+          Alle Stellenanzeigen &nbsp;&nbsp;<icon name="angle-right"></icon>
         </router-link>
       </div>
     </div>
-    <hr />
   </div>
 </template>
 
 <script>
+  import JobMethods from '../../mixins/job'
+
   export default {
     name: 'home-joblist',
     data() {
@@ -51,30 +52,7 @@
     created() {
       this.retrieveJobs();
     },
-    methods: {
-      shuffleArray: function(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
-          while (0 !== currentIndex) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-          }
-        return array;
-      },
-      retrieveJobs() {
-        this.loading = true;
-        this.$http.get('http://t2w-node.herokuapp.com/api/jobs/json').then(response => {
-          this.jobs = response.data;
-          this.jobs = this.shuffleArray(this.jobs);
-        }, response => {
-          console.log("Error", response);
-        }).then(_ => {
-          this.loading = false;
-        });
-      }
-    }
+    mixins: [JobMethods]
   }
 </script>
 

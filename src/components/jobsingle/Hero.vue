@@ -1,7 +1,7 @@
 <template>
   <div class="section-hero small">
     <div class="hero-image">
-      <div class="image-src" style="background-image: url('./static/images/hero/hero-applicants.jpg')"></div>
+      <div class="image-src" style="background-image: url('/static/images/hero/hero-applicants.jpg')"></div>
     </div>
     <div class="container">
       <div class="hero-text">

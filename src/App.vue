@@ -72,7 +72,7 @@
   	color: $color-red-t2w;
   }
   hr {
-    margin: 0;
-    border-top: 3px solid $color-gray-light;
+    @include rem((margin: 20px 0));
+    border-top: 1px solid $color-gray-light;
   }
 </style>

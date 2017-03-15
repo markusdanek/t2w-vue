@@ -12,7 +12,7 @@
                 <li>A-1150 Wien</li>
                 <li>Tel: +43 1 892 1 892, Fax -14</li>
                 <li>
-                  <a href="mailto:office@team2work.at">E-Mail: office@team2work.at</a>
+                  <a :href="`mailto:office@team2work.at`">E-Mail: office@team2work.at</a>
                 </li>
               </ul>
             </div>

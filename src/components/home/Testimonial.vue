@@ -37,8 +37,8 @@
                 </blockquote>
               </div>
             </div>
-            <a data-slide="prev" href="javascript:#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
-            <a data-slide="next" href="javascript:#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+            <a data-slide="prev" href="javascript:#quote-carousel" class="left carousel-control"><icon name="chevron-left"></icon></a>
+            <a data-slide="next" href="javascript:#quote-carousel" class="right carousel-control"><icon name="chevron-right"></icon></a>
           </div>
         </div>
       </div>

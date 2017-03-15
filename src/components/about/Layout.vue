@@ -2,7 +2,6 @@
   <div>
     <about-hero></about-hero>
     <about-employee></about-employee>
-    <hr />
     <about-text></about-text>
   </div>
 </template>
@@ -15,7 +14,7 @@
   Vue.component('about-hero', About_Hero);
   Vue.component('about-employee', About_Employee);
   Vue.component('about-text', About_Text);
-  
+
   export default {
     name: 'about'
   }

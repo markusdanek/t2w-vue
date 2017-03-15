@@ -64,7 +64,7 @@
           </div>
         </div>
       </div>
-      <router-link to="" class="own-story-link">
+      <router-link to="/jobs" class="own-story-link">
         <div class="own-story-link">
           <h3 class="own-story">
             Sie wollen Ihre eigene Erfolgsgeschichte hier lesen?<br />Dann bewerbe Sie sich für unsere aktuellen Jobs!

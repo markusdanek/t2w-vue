@@ -34,23 +34,11 @@
                 Kontakt
               </p>
               <ul class="contact">
-                <li>
-                  team<span class="two">2</span>work Arbeitskräfteüberlassung GmbH
-                </li>
-                <li>
-                  Mariahilfer Straße 136
-                </li>
-                <li>
-                  1150 Wien, Österreich
-                </li>
-                <li>
-                  Tel +43 (0)1/892 1 892, Fax -14
-                </li>
-                <li>
-                  <a href="mailto:office@team2work.at">
-                  E-Mail: office@team2work.at
-                </a>
-                </li>
+                <li>team<span class="two">2</span>work Arbeitskräfteüberlassung GmbH</li>
+                <li>Mariahilfer Straße 136</li>
+                <li>1150 Wien, Österreich</li>
+                <li>Tel +43 (0)1/892 1 892, Fax -14</li>
+                <li><a :href="`mailto:office@team2work.at`">E-Mail: office@team2work.at</a></li>
               </ul>
             </div>
           </div>
