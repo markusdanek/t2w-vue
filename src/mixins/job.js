@@ -13,7 +13,7 @@ module.exports = {
       },
       retrieveJobs() {
         this.loading = true;
-        this.$http.get('http://t2w-node.herokuapp.com/api/jobs/json').then(response => {
+        this.$http.get('https://t2w-node.herokuapp.com/api/jobs/json').then(response => {
           this.jobs = response.data;
           this.jobs = this.shuffleArray(this.jobs);
         }, response => {
@@ -24,7 +24,7 @@ module.exports = {
       },
       retrieveJobSingle() {
         this.loading = true;
-        this.$http.get('http://t2w-node.herokuapp.com/api/jobs/' + this.$route.params.id + '/json')
+        this.$http.get('https://t2w-node.herokuapp.com/api/jobs/' + this.$route.params.id + '/json')
           .then(response => {
             this.job = response.data;
             this.responsibility = response.data.responsibility;
