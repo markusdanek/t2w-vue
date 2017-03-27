@@ -11,7 +11,7 @@
               <div class="title col-sm-11">
                 {{ job.title }}
               </div>
-              <router-link to="">
+              <router-link :to="{name:'JobSingle', params:{id:job._id}}">
                 <div class="link col-sm-1">
                   <icon name="angle-right"></icon>
                 </div>
@@ -19,7 +19,7 @@
             </li>
           </ul>
         </div>
-        <router-link to="" class="btn-more-jobs btn btn-danger pull-right">
+        <router-link to="/jobs" class="btn-more-jobs btn btn-danger pull-right">
           Alle Stellenanzeigen &nbsp;&nbsp;<icon name="angle-right"></icon>
         </router-link>
       </div>
