@@ -7,9 +7,11 @@
       <div class="hero-text">
         <div class="text container">
           <h1 class="startpage">
-            <span class="one">Überlassung, </span>
+            <!-- <span class="one">Überlassung, </span>
             <span class="twoo">Vermittlung</span>
-            <span class="three">und Beratung</span>
+            <span class="three">und Beratung</span> -->
+            Arbeit auf Zeit,<br />
+					  Erfolg auf Dauer
           </h1>
           <h2 class="startpage">
             Egal, ob Sie qualifizierte Mitarbeiter suchen oder eine neue Arbeitsstelle
@@ -67,12 +69,12 @@
       }
   	}
   	h2.startpage {
-      visibility: hidden;
   		@include rem(font-size, 20px);
   		font-family: 'Open Sans';
   		font-weight: lighter;
-      -webkit-animation: fadein 2s forwards;
-      animation-delay: 4s;
+      // visibility: hidden;
+      // -webkit-animation: fadein 2s forwards;
+      // animation-delay: 4s;
   	}
   	.hero-image {
   		background-color: $color-black;
