@@ -3,20 +3,30 @@
     <h4>Für unseren Bewerberpool sind wir laufend an folgenden Qualifikationen interessiert:</h4>
 
     <div class="block">
-      <button @click.prevent="collapse(0)">Informationstechnologie</button>
+      <button @click.prevent="collapse(0)">Bewerberpool</button>
       <transition name="fade">
         <div v-show="boxes[0].show">
           <ul>
             <li>Netzwerkadministratoren</li>
             <li>MS Exchange Specialisten</li>
+            <li>Supply Chain Manager</li>
+            <li>QC Labortechniker</li>
+            <li>Quality Assurance Specialisten</li>
+            <li>Chemieverfahrenstechniker</li>
+            <li>Servicetechniker im Aussendienst</li>
+            <li>Mechatroniker</li>
+            <li>Anlagen-/Automatisierungstechniker</li>
+            <li>Logistikmitarbeiter mit SAP und Hochregal-Erfahrung</li>
+            <li>AssistentInnen sowie BüromitarbeiterInnen</li>
+            <li>Maschinenoperator</li>
             <li>Projektmanager</li>
-            <li>Software Entwickler</li>
+            <li>Produktmanager</li>
           </ul>
         </div>
       </transition>
     </div>
 
-    <div class="block">
+    <!-- <div class="block">
       <button @click.prevent="collapse(1)">Finance</button>
       <transition name="fade">
         <div v-show="boxes[1].show">
@@ -61,7 +71,7 @@
           </ul>
         </div>
       </transition>
-    </div>
+    </div> -->
   </div>
 </template>
 
