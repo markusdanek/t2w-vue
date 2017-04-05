@@ -9,6 +9,7 @@ import Jobs from '@/components/jobs/Layout'
 import JobSingle from '@/components/jobsingle/Layout'
 import Contact from '@/components/contact/Layout'
 import Impress from '@/components/impress/Layout'
+import Login from '@/components/backend/Login'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/impressum',
       name: 'Impress',
       component: Impress
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ],
   scrollBehavior (to, from, savedPosition) {
