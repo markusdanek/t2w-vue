@@ -1,6 +1,11 @@
 <template>
   <div class="apply-section col-sm-9">
-    <div class="waiting">
+    <div v-if="job.moreInfoText">
+      <h3>Unser Kunde bietet:</h3>
+      <p>{{job.moreInfoText}}</p>
+    </div>
+    <hr />
+    <div>
       <p>{{job.expectText}}</p>
     </div>
     <hr />
@@ -38,6 +43,10 @@
   .apply-section {
     @include rem((margin: 30px 0));
     @include rem((padding: 0));
+    h3 {
+      @include rem((margin-bottom: 20px));
+      color: $color-red-t2w;
+    }
     .apply-contact {
       a.mailto {
         color: $color-red-t2w;

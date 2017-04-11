@@ -6,6 +6,9 @@
     <div class="title block">
       <h2>{{job.title}} m/w</h2>
     </div>
+    <div class="intro block" v-if="job.subText">
+      <p>{{job.subText}}</p>
+    </div>
     <hr />
     <div class="working-info block">
       <h3>Aufgabenbereich</h3>
