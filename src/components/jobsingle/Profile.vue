@@ -6,7 +6,7 @@
     <div class="title block">
       <h2>{{job.title}} m/w</h2>
     </div>
-    <div class="intro block" v-if="job.subText">
+    <div class="intro block subtext" v-if="job.subText">
       <p>{{job.subText}}</p>
     </div>
     <hr />
@@ -60,7 +60,7 @@
       ul {
         li {
           list-style-type: square;
-      }
+        }
       }
       &.title {
         h2 {
@@ -73,6 +73,9 @@
         p {
           @include rem((font-size, 16px));
         }
+      }
+      &.subtext {
+        text-align: center;
       }
     }
   }
