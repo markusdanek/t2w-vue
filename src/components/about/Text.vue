@@ -34,7 +34,7 @@
         <div class="company-philosophy">
           <h2>Together we achieve more.</h2>
           <p>
-            Wir von team2work beraten sowohl Kunden als auch Bewerber gleichermaßen,
+            Wir von team<span class="two">2</span>work beraten sowohl Kunden als auch Bewerber gleichermaßen,
             stets nach unserer Firmenphilosophie: <br>„Unser/e Kandidat/innen von heute
             sind möglicherweise unser/e Kund/innen von morgen“.
           </p>
