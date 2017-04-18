@@ -30,14 +30,38 @@
             Wir sind die Praktikerinnen unter den Personaldienstleistern. Wir sind team<span class="two">2</span>work.
           </p>
         </div>
+        <hr />
+        <div class="company-philosophy">
+          <h2>Together we achieve more.</h2>
+          <p>
+            Wir von team2work beraten sowohl Kunden als auch Bewerber gleichermaßen,
+            stets nach unserer Firmenphilosophie: <br>„Unser/e Kandidat/innen von heute
+            sind möglicherweise unser/e Kund/innen von morgen“.
+          </p>
+          <transition name="fade">
+            <about-philosophy v-if="more"></about-philosophy>
+          </transition>
+          <button type="button" name="button" class="btn btn-danger pull-right" :class="{ 'more': more }" v-on:click="more = !more">{{ more ? lessText : moreText }}</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import About_Philosophy from '@/components/about/Philosophy'
+  Vue.component('about-philosophy', About_Philosophy);
+
   export default {
-    name: 'about-text'
+    name: 'about-text',
+    data() {
+      return {
+        more: false,
+        moreText: 'Unsere Philosophie lesen',
+        lessText: 'Weniger anzeigen'
+      }
+    }
   }
 </script>
 
@@ -54,7 +78,8 @@
     .who-is-behind {
       @include rem((margin-bottom: 60px));
     }
-    .double-power {
+    .double-power,
+    .company-philosophy {
       @include rem((margin: 60px auto 60px auto));
       h2 {
         color: $color-red-t2w;
@@ -63,9 +88,22 @@
       p {
         text-align: right;
       }
+      button.more {
+        background: $color-black-medium;
+        color: $color-white;
+        border-color: $color-black;
+      }
     }
     .solution-practicable {
       @include rem((margin-top: 60px));
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity .5s
+    }
+    .fade-enter,
+    .fade-leave-to {
+      opacity: 0
     }
   }
 </style>
