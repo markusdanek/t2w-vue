@@ -1,8 +1,8 @@
 {
   "name": "t2w-vue",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "team2work Vue.js app",
-  "author": "Markus Danek <mdanek@sipwise.com>",
+  "author": "Markus Danek <markus.danek@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

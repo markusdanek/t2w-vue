@@ -7,7 +7,7 @@
       <div class="hero-text">
         <div class="text container">
           <h1 class="startpage">
-            Das team<span class="two">2</span>work Team für Ihren Erfolg
+            team<span class="two">2</span>work für Ihren Erfolg
           </h1>
         </div>
       </div>
