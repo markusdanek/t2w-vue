@@ -47,10 +47,12 @@
         <div v-show="boxes[2].show">
           <ul>
             <li>MechatronikerIn</li>
-            <li>ElektrotechnikerIn/ElektroanlagentechnikerIn</li>
+            <li>ElektrotechnikerIn</li>
+            <li>ElektroanlagentechnikerIn</li>
             <li>HKLS- TechnikerIn</li>
             <li>CAD-TechnikerIn und ZeichnerIn</li>
-            <li>MaschineneinstellerIn/InstandhaltungstechnikerIn</li>
+            <li>MaschineneinstellerIn</li>
+            <li>InstandhaltungstechnikerIn</li>
           </ul>
         </div>
       </transition>
