@@ -10,6 +10,15 @@ Vue.use(VueResource);
 
 Vue.config.productionTip = true
 
+Vue.http.interceptors.push(function(request, next) {
+  let self = this;
+  next((response) => {
+    if (response.status === 401) {
+      self.$dispatch('logout');
+    }
+  });
+});
+
 new Vue({
   el: '#app',
   router,

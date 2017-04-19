@@ -27,8 +27,15 @@
   Vue.component('impress-cookies', Impress_Cookies);
   Vue.component('impress-disclaimer', Impress_Disclaimer);
 
+  import auth from '../../mixins/auth'
+
   export default {
-    name: 'impress'
+    name: 'impress',
+    route: {
+      beforeEnter() {
+        return checkAuth();
+      }
+    }
   }
 </script>
 

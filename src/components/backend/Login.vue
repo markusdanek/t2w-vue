@@ -1,37 +1,63 @@
 <template>
-  <div>
+<div>
+  <div class="section-hero small">
+    <div class="hero-image">
+      <div class="image-src" style="background-image: url('./static/images/hero/hero-applicants.jpg')"></div>
+    </div>
     <div class="container">
-  	<form class="form-signin" action="" method="post">
-  		<h2 class="form-signin-heading">Bitte melden Sie sich an</h2>
-  		<label for="inputEmail" class="sr-only">Benutzername</label>
-  		<input id="username" class="form-control" type="text" name="username" placeholder="Benutzername" autofocus required>
-  		<label for="inputPassword" class="sr-only">Passwort</label>
-  		<input id="password" class="form-control" type="password" name="password" placeholder="Passwort" required>
-  		<button class="btn btn-lg btn-primary btn-block" type="submit">Anmelden</button>
-  	</form>
+      <div class="hero-text">
+        <div class="text container">
+          <h1 class="startpage">
+              Mit unserer Hilfe zu Ihrem Traumjob
+            </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <form class="login-form" @click.prevent='login' >
+      <p>
+        <input type="text" v-model='email' placeholder="Email">
+      </p>
+      <p>
+        <input type='password' v-model='password' placeholder="Password">
+      </p>
+      <p>
+        <button type="submit" name="button">Submit</button>
+      </p>
+    </form>
   </div>
 
-  </div>
+</div>
 </template>
 
 <script>
-  import Vue from 'vue'
-  // import About_Hero from '@/components/about/Hero'
-  // import About_Employee from '@/components/about/Employee'
-  // import About_Text from '@/components/about/Text'
-  // Vue.component('about-hero', About_Hero);
-  // Vue.component('about-employee', About_Employee);
-  // Vue.component('about-text', About_Text);
 
-  export default {
-    name: 'login'
+import Vue from 'vue'
+import auth from '../../mixins/auth'
+// import About_Hero from '@/components/about/Hero'
+// Vue.component('about-hero', About_Hero);
+
+export default {
+  name: 'login',
+  data() {
+    return {
+      email: 'markus.danek@gmail.com',
+      password: '1234'
+    }
+  },
+  methods: {
+    login() {
+      auth.login(this.email, this.password);
+    }
   }
+}
 </script>
 
 <style scoped lang="scss">
-  @import "../../styles/util/util.scss";
+@import "../../styles/util/util.scss";
 
-  .wrapper {
-  	background: $color-white;
-  }
+.wrapper {
+    background: $color-white;
+}
 </style>

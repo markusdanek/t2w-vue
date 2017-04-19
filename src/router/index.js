@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import auth from '@/mixins/auth'
+
 import Home from '@/components/home/Layout'
 import Company from '@/components/company/Layout'
 import Applicants from '@/components/applicants/Layout'
@@ -14,6 +16,7 @@ import Login from '@/components/backend/Login'
 Vue.use(Router)
 
 export default new Router({
+
   routes: [
     {
       path: '/',
@@ -53,7 +56,8 @@ export default new Router({
     {
       path: '/impressum',
       name: 'Impress',
-      component: Impress
+      component: Impress,
+      beforeEnter: auth.requireAuth
     },
     {
       path: '/login',
