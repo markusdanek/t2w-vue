@@ -1,10 +1,6 @@
 <template>
   <div>
     <p>
-      Wir von team2work beraten sowohl Kunden als auch Bewerber gleichermaßen, stets nach
-      unserer Firmenphilosophie: „Unser/e Kandidat/innen von heute sind möglicherweise
-      unser/e Kund/innen von morgen“.
-
       Unseren Bewerber/innen kommunizieren wir auf Erfahrungswerten basierende Bewerbungstipps
       und erarbeiten bei Bedarf gemeinsam eine neue „berufliche Visitenkarte“.
 
