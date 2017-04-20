@@ -13,8 +13,8 @@
             <li>(LeiterIn) (Senior-) ControllerIn</li>
             <li>BerufsanwärterIn/ SteuerberaterIn</li>
             <li>Konzernrechnungswesen</li>
-            <li>Sachbearbeiter Rechnungswesen</li>
-            <li>Mitarbeiter Rechnungswesen</li>
+            <li>SachbearbeiterIn Rechnungswesen</li>
+            <li>MitarbeiterIn Rechnungswesen</li>
             <li>Objekt- /ImmobilienbuchhalterIn</li>
           </ul>
         </div>
@@ -49,7 +49,7 @@
             <li>MechatronikerIn</li>
             <li>ElektrotechnikerIn</li>
             <li>ElektroanlagentechnikerIn</li>
-            <li>HKLS- TechnikerIn</li>
+            <li>HKLS-TechnikerIn</li>
             <li>CAD-TechnikerIn und ZeichnerIn</li>
             <li>MaschineneinstellerIn</li>
             <li>InstandhaltungstechnikerIn</li>
@@ -66,6 +66,8 @@
             <li>ProduktingenieurIn</li>
             <li>ProjektingenieurIn</li>
             <li>Projekt- und ProzessmanagerIn</li>
+            <li>ProduktmanagerIn</li>
+            <li>ProduktionsingenieurIn</li>
           </ul>
         </div>
       </transition>
@@ -76,7 +78,7 @@
       <transition name="fade">
         <div v-show="boxes[4].show">
           <ul>
-            <li>(Leiter) Qualitätsmanagement</li>
+            <li>(LeiterIn) Qualitätsmanagement</li>
             <li>QC LabortechnikerIn</li>
             <li>QC SpezialistIn</li>
             <li>SpezialistIn für die Supportfunktion</li>
@@ -85,6 +87,7 @@
             <li>ChemieingenieurIn</li>
             <li>Qualified Person</li>
             <li>ProjektleiterIn</li>
+            <li>Manufactoring SpezialistIn</li>
           </ul>
         </div>
       </transition>
@@ -96,12 +99,12 @@
         <div v-show="boxes[5].show">
           <ul>
             <li>Supply Chain MangerIn (SCM)</li>
-            <li>Seriendisponent</li>
+            <li>SeriendisponentIn</li>
             <li>TeamleaderIn Specialist Planning &amp; Scheduling</li>
             <li>DisponentIn</li>
             <li>(TeamleaderIn) Serienlogistik</li>
             <li>LogistikmitarbeiterIn</li>
-            <li>Einkäufer</li>
+            <li>EinkäuferIn</li>
           </ul>
         </div>
       </transition>
