@@ -132,7 +132,7 @@
       return {
         boxes: [
           {
-            show: true
+            show: false
           },
           {
             show: false
