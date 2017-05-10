@@ -7,7 +7,7 @@
       <div class="hero-text">
         <div class="text container">
           <h1 class="startpage">
-            &#9888; API BACKEND &#9888;
+            API
           </h1>
         </div>
       </div>

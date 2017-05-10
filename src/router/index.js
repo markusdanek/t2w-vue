@@ -71,7 +71,7 @@ export default new Router({
       component: JobList
     },
     {
-      path: '/backend/edit',
+      path: '/backend/edit/:id',
       name: 'JobEdit',
       component: JobEdit
     },
