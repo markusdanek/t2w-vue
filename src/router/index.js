@@ -12,7 +12,7 @@ import Impress from '@/components/impress/Layout';
 import Login from '@/components/backend/Login';
 import JobList from '@/components/backend/JobList';
 import JobAdd from '@/components/backend/JobAdd';
-import JobAction from '@/components/backend/JobAction';
+import JobEdit from '@/components/backend/JobEdit';
 
 Vue.use(Router);
 
@@ -67,17 +67,17 @@ export default new Router({
     },
     {
       path: '/backend/list',
-      name: 'api-job-list',
+      name: 'JobList',
       component: JobList
     },
     {
-      path: '/backend/action',
-      name: 'api-job-action',
-      component: JobAction
+      path: '/backend/edit',
+      name: 'JobEdit',
+      component: JobEdit
     },
     {
       path: '/backend/add',
-      name: 'api-job-add',
+      name: 'JobAdd',
       component: JobAdd
     },
     {

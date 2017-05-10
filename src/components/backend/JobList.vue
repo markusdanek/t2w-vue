@@ -11,9 +11,9 @@
             <thead>
               <tr>
                 <th>Referenznummer</th>
-  							<th>Titel</th>
-  							<th>Gebiet</th>
-  							<th>Aktion</th>
+                <th>Titel</th>
+                <th>Gebiet</th>
+                <th>Aktion</th>
               </tr>
             </thead>
             <tbody>
@@ -26,10 +26,10 @@
                   {{ job.area }}
                 </td>
                 <td>
-                  <router-link :to="{name:'JobAction', params:{id:job._id}}">
+                  <router-link :to="{name:'JobEdit', params:{id:job._id}}">
                     Details
                   </router-link>
-  							</td>
+                </td>
               </tr>
             </tbody>
           </table>

@@ -12,7 +12,7 @@
   Vue.component('backend-hero', Backend_Hero);
 
   export default {
-    name: 'api-job-action',
+    name: 'api-job-edit',
     data() {
       return {
         jobs: [],
