@@ -1,17 +1,20 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-import Home from '@/components/home/Layout'
-import Company from '@/components/company/Layout'
-import Applicants from '@/components/applicants/Layout'
-import About from '@/components/about/Layout'
-import Jobs from '@/components/jobs/Layout'
-import JobSingle from '@/components/jobsingle/Layout'
-import Contact from '@/components/contact/Layout'
-import Impress from '@/components/impress/Layout'
-import Login from '@/components/backend/Login'
+import Home from '@/components/home/Layout';
+import Company from '@/components/company/Layout';
+import Applicants from '@/components/applicants/Layout';
+import About from '@/components/about/Layout';
+import Jobs from '@/components/jobs/Layout';
+import JobSingle from '@/components/jobsingle/Layout';
+import Contact from '@/components/contact/Layout';
+import Impress from '@/components/impress/Layout';
+import Login from '@/components/backend/Login';
+import JobList from '@/components/backend/JobList';
+import JobAdd from '@/components/backend/JobAdd';
+import JobAction from '@/components/backend/JobAction';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
 
@@ -56,10 +59,26 @@ export default new Router({
       name: 'Impress',
       component: Impress
     },
+    // BACKEND ROUTES
     {
-      path: '/login',
+      path: '/backend/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/backend/list',
+      name: 'api-job-list',
+      component: JobList
+    },
+    {
+      path: '/backend/action',
+      name: 'api-job-action',
+      component: JobAction
+    },
+    {
+      path: '/backend/add',
+      name: 'api-job-add',
+      component: JobAdd
     },
     {
       path: '*',

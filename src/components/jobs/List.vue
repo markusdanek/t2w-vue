@@ -51,7 +51,7 @@
       }
     },
     created() {
-      this.retrieveJobs();
+      this.retrieveJobsRandom();
     },
     mixins: [JobMethods]
   }

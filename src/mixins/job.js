@@ -15,6 +15,16 @@ module.exports = {
         this.loading = true;
         this.$http.get('https://t2w-node.herokuapp.com/api/jobs/json').then(response => {
           this.jobs = response.data;
+        }, response => {
+          console.log("Error", response);
+        }).then(_ => {
+          this.loading = false;
+        });
+      },
+      retrieveJobsRandom() {
+        this.loading = true;
+        this.$http.get('https://t2w-node.herokuapp.com/api/jobs/json').then(response => {
+          this.jobs = response.data;
           this.jobs = this.shuffleArray(this.jobs);
         }, response => {
           console.log("Error", response);
