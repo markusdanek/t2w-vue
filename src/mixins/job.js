@@ -54,6 +54,44 @@ module.exports = {
           }, response => {
             console.log("Error", response);
           });
+      },
+      checkEmptyFields() {
+        if(this.job.referenceId == undefined) {
+          this.job.referenceId = "";
+        }
+        if (this.job.subText == undefined){
+          this.job.subText = "";
+        }
+        if (this.job.subText == undefined){
+          this.job.subText = "";
+        }
+        if (this.job.minSalary == undefined){
+          this.job.minSalary = "";
+        }
+        if (this.job.maxSalary == undefined){
+          this.job.maxSalary = "";
+        }
+        if (this.job.salaryText == undefined){
+          this.job.salaryText = "";
+        }
+        if (this.job.area == undefined){
+          this.job.area = "";
+        }
+        if (this.job.introText == undefined){
+          this.job.introText = "";
+        }
+        if (this.job.moreInfoText == undefined){
+          this.job.moreInfoText = "";
+        }
+        if (this.job.email == undefined){
+          this.job.email = "";
+        }
+        if (this.job.contact == undefined){
+          this.job.contact = "";
+        }
+        if (this.job.expectText == undefined){
+          this.job.expectText = "";
+        }
       }
     }
 }
