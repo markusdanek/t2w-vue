@@ -7,7 +7,7 @@
         <router-link :class="['btn btn-primary pull-right back-to-list']" :role="['button']" :to="{ name: 'JobList' }">Return to jobs</router-link>
         <notification v-bind:notifications="notifications"></notification>
 
-        <form class='form-horizontal' v-on:submit="addJob">
+        <form class='form-horizontal' v-on:submit.prevent="addJob">
           <h2 class="">Pflicht</h2>
           <div class="form-group">
     				<label for="title" class="col-sm-3 control-label">Titel der Anzeige</label>
@@ -35,6 +35,13 @@
     					<input type='text' name='referenceId' v-model="job.referenceId" class='form-control' placeholder='1234567K'>
     				</div>
     			</div>
+
+          <div v-for="qual in qualification">
+            <input v-model="qual.text">
+          </div>
+          <button @click.prevent="addQualification">
+            New Qualification
+          </button>
           <!-- <div class="form-group">
     				<label for="inputEmail3" class="col-sm-2 control-label">XML Schnittstelle (optional)</label>
     				<div class="col-sm-9" style="margin-left: 20px;">
@@ -46,6 +53,7 @@
     					</div>
     				</div>
     			</div> -->
+
           <div class="form-group">
     				<label for="subText" class="col-sm-3 control-label">Job Untertitel (nach Titel der Anzeige)</label>
     				<div class="col-sm-8">
@@ -112,14 +120,11 @@
 
       </div>
 
-      <br><br><br><br><br><br><br><br>
-      <div v-for="qual in qualification">
-        <input v-model="qual.value">
-      </div>
-      <button @click="addQualification">
-        New Qualification
-      </button>
+
       <pre>{{ $data }}</pre>
+      {{ job }}
+      {{ this.job }}
+      {{ this.job.qualifications }}
     </div>
   </div>
 </template>
@@ -147,12 +152,26 @@
       }
     },
     methods: {
+      removeRun: function(i) {
+        console.log("Remove", i);
+        this.settings.runs.splice(i,1);
+      },
       addQualification() {
-        this.qualification.push({ value: '' });
+        this.qualification.push({ text: '' });
+        this.job.qualifications = this.qualification;
       },
       addJob: function() {
         this.checkEmptyFields();
-        this.$http.post('http://localhost:9001/jobs/', this.job).then(response => {
+        // this.job.qualifications = this.qualification;
+        let job = Object.assign({}, this.job);
+        job.qualifications = this.qualifications.map(q => q.text);
+
+        console.log(this.qualification);
+        console.log(this.job.qualifications);
+        console.log(this.job);
+        console.log(job);
+
+        this.$http.post('http://localhost:9001/jobs/', job).then(response => {
           console.log(response);
           this.notifications.push({
             type: 'success',
