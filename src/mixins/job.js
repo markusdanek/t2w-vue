@@ -92,6 +92,12 @@ module.exports = {
         if (this.job.expectText == undefined){
           this.job.expectText = "";
         }
+        if (this.job.qualifications == undefined){
+          this.job.qualifications = "";
+        }
+        if (this.job.responsibility == undefined){
+          this.job.responsibility = "";
+        }
       }
     }
 }

@@ -3,9 +3,9 @@
     <backend-hero></backend-hero>
     <div class="wrapper">
       <div class="job-list container">
-        <div class="col-sm-12">
-          <router-link to="/backend/add">
-            Neuer Job
+        <div class="col-sm-10 col-sm-offset-1">
+          <router-link to="/backend/add"  :class="['btn btn-primary back-to-list']">
+            Neuen Job anlegen
           </router-link>
           <table class="table table-responsive">
             <thead>
@@ -65,6 +65,11 @@
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 
+  a.back-to-list {
+    @include rem((margin: 20px 20px 20px 0px));
+    background: $color-red-t2w;
+    border: none;
+  }
   .job-list {
     table.table {
       @include rem((padding: 60px 0));

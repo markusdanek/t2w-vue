@@ -3,9 +3,14 @@
     <backend-hero></backend-hero>
     <div class="wrapper">
       <div class="container">
-
-        <router-link :class="['btn btn-primary pull-right back-to-list']" :role="['button']" :to="{ name: 'JobList' }">Return to jobs</router-link>
-        <notification v-bind:notifications="notifications"></notification>
+        <div class="col-sm-12 col-sm-offset-4">
+          <notification v-bind:notifications="notifications"></notification>
+        </div>
+        <div class="col-sm-offset-1">
+          <router-link :class="['btn btn-primary back-to-list']" :role="['button']" :to="{ name: 'JobList' }">
+            Zurück zur Übersicht
+          </router-link>
+        </div>
 
         <form class='form-horizontal' v-on:submit.prevent="addJob">
           <h2 class="">Pflicht</h2>
@@ -36,12 +41,6 @@
     				</div>
     			</div>
 
-          <div v-for="qual in qualification">
-            <input v-model="qual.text">
-          </div>
-          <button @click.prevent="addQualification">
-            New Qualification
-          </button>
           <!-- <div class="form-group">
     				<label for="inputEmail3" class="col-sm-2 control-label">XML Schnittstelle (optional)</label>
     				<div class="col-sm-9" style="margin-left: 20px;">
@@ -114,17 +113,42 @@
     					<input type='text' name='expectText' v-model="job.expectText" class='form-control' placeholder='Es erwartet Sie eine interessante und vielseitige Tätigkeit in einem technisch...'>
     				</div>
     			</div>
-          <button class='btn btn-lg btn-primary' type='submit'>Job hinzufügen</button>
+          <hr>
+          <h2>Qualifikationen</h2>
+          <div class="form-group" v-for="qual in qualification">
+    				<label for="qualifications" class="col-sm-3 control-label">Qualifikation</label>
+    				<div class="col-sm-8">
+    					<input type='text' name='qualifications' v-model="qual.text" class='form-control' placeholder='Sie verfügen..'>
+    				</div>
+    			</div>
+          <div class="row">
+            <a @click.prevent="addQualification" class="col-sm-offset-3 addmore">
+              + Neue Qualifikation
+            </a>
+          </div>
+          <hr>
+          <h2>Verantwortungen</h2>
+          <div class="form-group" v-for="resp in responsibility">
+    				<label for="responsibility" class="col-sm-3 control-label">Verantwortung</label>
+    				<div class="col-sm-8">
+    					<input type='text' name='responsibility' v-model="resp.text" class='form-control' placeholder='Sie müssen...'>
+    				</div>
+    			</div>
+          <div class="row">
+            <a @click.prevent="addResponsibility" class="col-sm-offset-3 addmore">
+              + Neue Verantwortung
+            </a>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-offset-3">
+              <button class='submit-btn btn btn-success' type='submit' style="display: block;margin: 10px 0 20px 0;">
+                Job hinzufügen
+              </button>
+            </div>
+          </div>
         </form>
-
-
       </div>
-
-
-      <pre>{{ $data }}</pre>
-      {{ job }}
-      {{ this.job }}
-      {{ this.job.qualifications }}
     </div>
   </div>
 </template>
@@ -143,7 +167,8 @@
         job: {},
         loading: false,
         notifications: [],
-        qualification: []
+        qualification: [],
+        responsibility: []
       }
     },
     route: {
@@ -152,38 +177,31 @@
       }
     },
     methods: {
-      removeRun: function(i) {
-        console.log("Remove", i);
-        this.settings.runs.splice(i,1);
-      },
       addQualification() {
         this.qualification.push({ text: '' });
-        this.job.qualifications = this.qualification;
+      },
+      addResponsibility() {
+        this.responsibility.push({ text: '' });
       },
       addJob: function() {
         this.checkEmptyFields();
-        // this.job.qualifications = this.qualification;
         let job = Object.assign({}, this.job);
-        job.qualifications = this.qualifications.map(q => q.text);
-
-        console.log(this.qualification);
-        console.log(this.job.qualifications);
-        console.log(this.job);
-        console.log(job);
-
+        job.qualifications = this.qualification.map(q => q.text);
+        job.responsibility = this.responsibility.map(q => q.text);
         this.$http.post('http://localhost:9001/jobs/', job).then(response => {
           console.log(response);
           this.notifications.push({
             type: 'success',
-            message: 'Job created successfully'
+            message: 'Job erfolgreich erstellt'
           });
         }, response => {
           console.log(response);
           this.notifications.push({
             type: 'error',
-            message: 'Job not created'
+            message: 'Job wurde nicht erstellt'
           });
         });
+        this.$router.push('/backend/list');
       }
     },
     mixins: [JobMethods],
@@ -205,6 +223,9 @@
     h2 {
       @include rem((margin: 20px 0 20px 50px));
       color: $color-red-t2w;
+    }
+    a.addmore {
+      padding-left: 15px;
     }
   }
 </style>

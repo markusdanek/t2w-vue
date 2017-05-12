@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="content">
       <div class="row">
-        <div id="notifications" class="col-sm-6">
+        <div id="notifications" class="col-sm-4">
           <div v-for="notification in notifications" :class="getNotificationClass(notification)">
             {{ notification.message }}
           </div>
@@ -26,3 +26,11 @@
     props: ['notifications']
   }
 </script>
+
+<style>
+  #notifications {
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+  }
+</style>
