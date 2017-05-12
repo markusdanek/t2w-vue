@@ -117,17 +117,27 @@
           <h2>Qualifikationen</h2>
           <div class="form-group" v-for="(qual, index) in job.qualifications">
     				<label for="qualifications" class="col-sm-3 control-label">Qualifikation {{ index }}</label>
-    				<div class="col-sm-8">
-    					<input type='text' :name="'qual'+index" v-model="qualifications[index]" class='form-control' placeholder='Sie verfügen..'>
-    				</div>
+            <div class="row">
+              <div class="col-sm-7">
+      					<input type='text' :name="'qual'+index" v-model="qualifications[index]" class='form-control' placeholder='Sie verfügen..'>
+      				</div>
+              <div class="col-sm-1">
+                <button class="btn btn-danger" @click.prevent="removeQualifiaction(index)"><icon name="remove"></icon></button>
+              </div>
+            </div>
     			</div>
           <hr>
           <h2>Verantwortung</h2>
           <div class="form-group" v-for="(resp, index) in job.responsibility">
     				<label for="responsibility" class="col-sm-3 control-label">Verantwortung {{ index }}</label>
-    				<div class="col-sm-8">
-    					<input type='text' :name="'resp'+index" v-model="responsibility[index]" class='form-control' placeholder='Sie müssen...'>
-    				</div>
+            <div class="row">
+              <div class="col-sm-7">
+      					<input type='text' :name="'resp'+index" v-model="responsibility[index]" class='form-control' placeholder='Sie müssen...'>
+      				</div>
+              <div class="col-sm-1">
+                <button class="btn btn-danger" @click.prevent="removeResponsibility(index)"><icon name="remove"></icon></button>
+              </div>
+            </div>
     			</div>
           <hr>
           <div class="row">
@@ -154,6 +164,7 @@
 
 <script>
   import Vue from 'vue';
+  import _ from 'lodash';
   import JobMethods from '../../mixins/job';
   import Notification from '@/components/backend/notifications.vue';
   import Backend_Hero from '@/components/backend/Hero';
@@ -175,7 +186,13 @@
       this.retrieveJobSingle();
     },
     methods: {
-      editJob: function() {
+      removeQualifiaction() {
+        this.qualifications.splice(this.qualifications.index, 1);
+      },
+      removeResponsibility() {
+        this.responsibility.splice(this.responsibility.index, 1);
+      },
+      editJob() {
         let job = Object.assign({}, this.job);
         job.qualifications = this.qualifications;
         job.responsibility = this.responsibility;
@@ -193,7 +210,7 @@
           });
         });
       },
-      deleteJob: function() {
+      deleteJob() {
         let job = Object.assign({}, this.job);
         this.$http.get('http://localhost:9001/jobs/' + job._id + '/delete').then(response => {
           console.log(response);

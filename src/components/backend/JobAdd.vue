@@ -98,7 +98,7 @@
     			<div class="form-group">
     				<label for="email" class="col-sm-3 control-label">E-Mail</label>
     				<div class="col-sm-8">
-    					<input type='email' name='email' value="bewerbung@team2work.at" v-model="job.email" class='form-control' placeholder='bewerbung@team2work.at'>
+    					<input type='email' name='email' value="bewerbung@team2work.at" class='form-control' placeholder='bewerbung@team2work.at'>
     				</div>
     			</div>
     			<div class="form-group">
@@ -183,7 +183,7 @@
       addResponsibility() {
         this.responsibility.push({ text: '' });
       },
-      addJob: function() {
+      addJob() {
         this.checkEmptyFields();
         let job = Object.assign({}, this.job);
         job.qualifications = this.qualification.map(q => q.text);

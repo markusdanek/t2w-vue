@@ -1,33 +1,30 @@
 <template>
 <div>
-  <div class="section-hero small">
-    <div class="hero-image">
-      <div class="image-src" style="background-image: url('./static/images/hero/hero-applicants.jpg')"></div>
-    </div>
+  <backend-hero></backend-hero>
+  <div class="wrapper">
     <div class="container">
-      <div class="hero-text">
-        <div class="text container">
-          <h1 class="startpage">
-              Mit unserer Hilfe zu Ihrem Traumjob
-            </h1>
+      <div class="row">
+        <div class="col-sm-9 col-sm-offset-1" v-show="authenticated">
+          <h1></h1>Hallo {{ localStorage.profile }}, du bist bereits eingeloggt!
+          <router-link to="/backend/list">Backend Job List</router-link>
+
+          <button @click="logout()">Logout</button>
+        </div>
+        <div class="col-sm-9 col-sm-offset-1 login" v-show="!authenticated">
+          <h2>Sie sind zur Zeit nicht angemeldet!</h2>
+          <button class="btn btn-success btn-lg" @click="login()">Login</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
-    <button @click="login()" v-show="!authenticated">Login</button>
-    <button @click="logout()" v-show="authenticated">Logout</button>
-    <hr>
-    <router-link to="/backend/list" v-show="authenticated">Backend Job List</router-link>
-  </div>
-  Hi {{ localStorage.profile.email }}
+  <pre>{{localstorage}}</pre>
 </div>
 </template>
 
 <script>
   import Vue from 'vue'
-  // import About_Hero from '@/components/about/Hero'
-  // Vue.component('about-hero', About_Hero);
+  import Backend_Hero from '@/components/backend/Hero';
+  Vue.component('backend-hero', Backend_Hero);
 
   function checkAuth() {
     return !!localStorage.getItem('id_token');
@@ -48,8 +45,6 @@
         this.logout();
       }
     },
-    // Check the user's auth status when the app
-    // loads to account for page refreshing
     mounted() {
       var self = this;
       Vue.nextTick(function() {
@@ -59,17 +54,13 @@
           localStorage.setItem('id_token', authResult.idToken);
           self.lock.getProfile(authResult.idToken, (error, profile) => {
             if (error) {
-              // Handle error
               return;
             }
-            // Set the token and user profile in local storage
             localStorage.setItem('profile', JSON.stringify(profile));
-
             self.authenticated = true;
           });
         });
         self.lock.on('authorization_error', (error) => {
-          // handle error when authorizaton fails
         });
     });
     },
@@ -78,8 +69,6 @@
         this.lock.show();
       },
       logout() {
-        // To log out, we just need to remove the token and profile
-        // from local storage
         localStorage.removeItem('id_token');
         localStorage.removeItem('profile');
         this.authenticated = false;
@@ -91,7 +80,16 @@
 <style scoped lang="scss">
 @import "../../styles/util/util.scss";
 
-.wrapper {
-    background: $color-white;
-}
+  .wrapper {
+      background: $color-white;
+  }
+  .login {
+    text-align: center;
+    h2 {
+      @include rem((margin: 20px auto));
+    }
+    button {
+      @include rem((margin: 20px auto));
+    }
+  }
 </style>
