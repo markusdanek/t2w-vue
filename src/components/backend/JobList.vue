@@ -2,7 +2,7 @@
   <div>
     <backend-hero></backend-hero>
     <div class="wrapper">
-      <div class="job-list container">
+      <div class="job-list container" v-show="authenticated">
         <div class="col-sm-10 col-sm-offset-1">
           <router-link to="/backend/add"  :class="['btn btn-primary back-to-list']">
             Neuen Job anlegen
@@ -35,6 +35,11 @@
           </table>
         </div>
       </div>
+      <div class="notloggedin" v-show="!authenticated">
+        <router-link to="/backend/login"  :class="['btn btn-primary back-to-list']">
+          Bitte melden Sie sich zuerst an!
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +52,8 @@
     data() {
       return {
         jobs: [],
+        authenticated: false,
+        localStorage,
         loading: false,
       }
     },
@@ -59,6 +66,10 @@
       }
     },
     mixins: [JobMethods]
+  }
+
+  function checkAuth() {
+    return !!localStorage.getItem('id_token');
   }
 </script>
 

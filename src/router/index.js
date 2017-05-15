@@ -17,7 +17,6 @@ import JobEdit from '@/components/backend/JobEdit';
 Vue.use(Router);
 
 export default new Router({
-
   routes: [
     {
       path: '/',
