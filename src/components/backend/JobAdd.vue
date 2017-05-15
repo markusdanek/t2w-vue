@@ -39,10 +39,10 @@
     				<label for="xmlschnittstelle" class="col-sm-3 control-label">XML Schnittstelle</label>
     				<div class="col-sm-8" style="margin-left: 20px;">
     					<div class="checkbox">
-    							<input type="checkbox" v-model="job.xmlOnline"> Stepstone
+    							<input type="checkbox" @change="onChange('stepstone', $event)"> Stepstone
     					</div>
     					<div class="checkbox">
-    						<input type="checkbox" v-model="job.xmlOnline"> Karriere
+    						<input type="checkbox" @change="onChange('karriere', $event)"> Karriere
     					</div>
     				</div>
     			</div>
