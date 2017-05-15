@@ -1,7 +1,8 @@
-<template>
+<template :authenticated="authenticated">
   <div>
     <backend-hero></backend-hero>
     <div class="wrapper">
+      {{authenticated}}
       <div class="job-list container" v-show="authenticated">
         <div class="col-sm-10 col-sm-offset-1">
           <router-link to="/backend/add"  :class="['btn btn-primary back-to-list']">
@@ -52,10 +53,12 @@
     data() {
       return {
         jobs: [],
-        authenticated: false,
         localStorage,
         loading: false,
       }
+    },
+    props: {
+      authenticated: Boolean
     },
     created() {
       this.retrieveJobs();

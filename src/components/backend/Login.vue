@@ -2,6 +2,7 @@
 <div>
   <backend-hero></backend-hero>
   <div class="wrapper">
+    {{authenticated}}
     <div class="container">
       <div class="row">
         <div class="col-sm-9 col-sm-offset-1 loggedin" v-show="authenticated">
