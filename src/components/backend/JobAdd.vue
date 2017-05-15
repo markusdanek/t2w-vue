@@ -42,17 +42,19 @@
     				</div>
     			</div>
 
-          <!-- <div class="form-group">
-    				<label for="inputEmail3" class="col-sm-2 control-label">XML Schnittstelle (optional)</label>
+          <div class="form-group">
+    				<label for="xmlschnittstelle" class="col-sm-2 control-label">XML Schnittstelle</label>
     				<div class="col-sm-9" style="margin-left: 20px;">
     					<div class="checkbox">
-    							<input type='checkbox' name='xmlOnline[]' value="stepstone" class='' {{#if (ifIn 'stepstone' job.xmlOnline)}} checked="checked" {{/if}}> Stepstone
+    							<!-- <input type='checkbox' name='xmlOnline[]' value="stepstone" class='' {{#if (ifIn 'stepstone' job.xmlOnline)}} checked="checked" {{/if}}> Stepstone -->
+                  <input type='checkbox' v-model="job.xmlOnline" :value="name" class=''> Stepstone
     					</div>
     					<div class="checkbox">
-    						<input type='checkbox' name='xmlOnline[]' value="karriere" class='' {{#if (ifIn 'karriere' job.xmlOnline)}} checked="checked" {{/if}}> Karriere
+    						<!-- <input type='checkbox' name='xmlOnline[]' value="karriere" class='' {{#if (ifIn 'karriere' job.xmlOnline)}} checked="checked" {{/if}}> Karriere -->
+                <input type='checkbox' v-model="job.xmlOnline" :value="name" class=''> Karriere
     					</div>
     				</div>
-    			</div> -->
+    			</div>
 
           <div class="form-group">
     				<label for="subText" class="col-sm-3 control-label">Job Untertitel (nach Titel der Anzeige)</label>

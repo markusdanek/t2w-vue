@@ -42,14 +42,23 @@
     				</div>
     			</div>
 
+          {{job.xmlOnline}}
+
+          <div v-for="(xml, index) in job.xmlOnline">
+            <input type="checkbox" :checked="xml == 'stepstone'"> Stepstone {{ index }}
+            <input type="checkbox" :checked="xml == 'karriere'"> Karriere {{ index }}
+          </div>
+
           <!-- <div class="form-group">
-    				<label for="inputEmail3" class="col-sm-2 control-label">XML Schnittstelle (optional)</label>
+    				<label for="xmlschnittstelle" class="col-sm-2 control-label">XML Schnittstelle</label>
     				<div class="col-sm-9" style="margin-left: 20px;">
     					<div class="checkbox">
     							<input type='checkbox' name='xmlOnline[]' value="stepstone" class='' {{#if (ifIn 'stepstone' job.xmlOnline)}} checked="checked" {{/if}}> Stepstone
+                  <input type='checkbox' v-model="job.xmlOnline" class='' :checked="job.xmlOnline == 'stepstone'"> Stepstone
     					</div>
     					<div class="checkbox">
     						<input type='checkbox' name='xmlOnline[]' value="karriere" class='' {{#if (ifIn 'karriere' job.xmlOnline)}} checked="checked" {{/if}}> Karriere
+                <input type='checkbox' v-model="job.xmlOnline" :value="name" class=''> Karriere
     					</div>
     				</div>
     			</div> -->
@@ -186,6 +195,7 @@
         notifications: [],
         qualifications: [],
         responsibility: [],
+        xmlOnline: [],
         authenticated: false,
         loading: false,
       }
