@@ -1,37 +1,129 @@
 <template>
-  <div>
+<div>
+  <backend-hero></backend-hero>
+  <div class="wrapper">
     <div class="container">
-  	<form class="form-signin" action="" method="post">
-  		<h2 class="form-signin-heading">Bitte melden Sie sich an</h2>
-  		<label for="inputEmail" class="sr-only">Benutzername</label>
-  		<input id="username" class="form-control" type="text" name="username" placeholder="Benutzername" autofocus required>
-  		<label for="inputPassword" class="sr-only">Passwort</label>
-  		<input id="password" class="form-control" type="password" name="password" placeholder="Passwort" required>
-  		<button class="btn btn-lg btn-primary btn-block" type="submit">Anmelden</button>
-  	</form>
+      <div class="row">
+        <div class="col-sm-9 col-sm-offset-1 loggedin" v-show="authenticated">
+          <div class="media">
+            <div class="media-left">
+              <img :src="this.getUserPicture()" alt="userPicture" width="150px;">
+            </div>
+            <div class="media-body">
+              <h2 class="media-heading">Hallo {{this.getLoggedInUserName()}}</h2>
+              <p>Du bist bereits eingeloggt!</p>
+              <p>Klicke hier um zur Job Verwaltung zu kommen: <router-link to="/backend/list">API Job Übersicht</router-link></p>
+              <button class="btn btn-danger btn-xs" @click="logout()">Abmelden</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-1 login" v-show="!authenticated">
+          <h2>Sie sind zur Zeit nicht angemeldet!</h2>
+          <button class="btn btn-success btn-lg" @click="login()">Login</button>
+        </div>
+      </div>
+    </div>
   </div>
-
-  </div>
+</div>
 </template>
 
 <script>
   import Vue from 'vue'
-  // import About_Hero from '@/components/about/Hero'
-  // import About_Employee from '@/components/about/Employee'
-  // import About_Text from '@/components/about/Text'
-  // Vue.component('about-hero', About_Hero);
-  // Vue.component('about-employee', About_Employee);
-  // Vue.component('about-text', About_Text);
+  import Backend_Hero from '@/components/backend/Hero';
+  Vue.component('backend-hero', Backend_Hero);
+
+  function checkAuth() {
+    return !!localStorage.getItem('id_token');
+  }
 
   export default {
-    name: 'login'
+    name: 'login',
+    data() {
+      return {
+        localStorage,
+        authenticated: false,
+        lock: new Auth0Lock('fjIMo36jLsTc4rYl6BOCIizBDK62hTZY', 'mrks.eu.auth0.com', {auth: { autoParseHash: false, redirect: false }})
+      }
+    },
+    events: {
+      'logout': function() {
+        this.logout();
+      }
+    },
+    mounted() {
+      var self = this;
+      Vue.nextTick(function() {
+        self.authenticated = checkAuth();
+
+        self.lock.resumeAuth(window.location.hash, function(err, result) {
+          console.log(result);
+        });
+
+        self.lock.on('authenticated', (authResult) => {
+          console.log('authenticated');
+          localStorage.setItem('id_token', authResult.idToken);
+          self.lock.getProfile(authResult.idToken, (error, profile) => {
+            if (error) {
+              return;
+            }
+            localStorage.setItem('profile', JSON.stringify(profile));
+            self.authenticated = true;
+          });
+        });
+
+        self.lock.on('authorization_error', (error) => {
+        });
+    });
+    },
+    methods: {
+      login() {
+        this.lock.show();
+      },
+      logout() {
+        localStorage.removeItem('id_token');
+        localStorage.removeItem('profile');
+        this.authenticated = false;
+      },
+      getLoggedInUserName() {
+        var obj = JSON.parse(localStorage.getItem('profile'));
+        if (obj) {
+            return obj.name;
+        } else {
+            return '';
+        }
+      },
+      getUserPicture() {
+        var url = JSON.parse(localStorage.getItem('profile'));
+        if (url) {
+          return url.picture;
+        } else {
+          return '';
+        }
+      }
+    }
   }
 </script>
 
 <style scoped lang="scss">
-  @import "../../styles/util/util.scss";
+@import "../../styles/util/util.scss";
 
   .wrapper {
-  	background: $color-white;
+      background: $color-white;
+  }
+  .login {
+    text-align: center;
+    h2 {
+      @include rem((margin: 20px 0));
+    }
+    button {
+      @include rem((margin: 20px 0));
+    }
+  }
+  .loggedin {
+    @include rem((margin-top: 50px));
+    @include rem((margin-bottom: 50px));
+    h2 {
+      @include rem((marin: 20px 0));
+    }
   }
 </style>

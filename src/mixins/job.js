@@ -13,7 +13,17 @@ module.exports = {
       },
       retrieveJobs() {
         this.loading = true;
-        this.$http.get('https://t2w-node.herokuapp.com/api/jobs/json').then(response => {
+        this.$http.get('https://t2w-api.herokuapp.com/jobs/').then(response => {
+          this.jobs = response.data;
+        }, response => {
+          console.log("Error", response);
+        }).then(_ => {
+          this.loading = false;
+        });
+      },
+      retrieveJobsRandom() {
+        this.loading = true;
+        this.$http.get('https://t2w-api.herokuapp.com/jobs/').then(response => {
           this.jobs = response.data;
           this.jobs = this.shuffleArray(this.jobs);
         }, response => {
@@ -24,7 +34,7 @@ module.exports = {
       },
       retrieveJobSingle() {
         this.loading = true;
-        this.$http.get('https://t2w-node.herokuapp.com/api/jobs/' + this.$route.params.id + '/json')
+        this.$http.get('https://t2w-api.herokuapp.com/jobs/' + this.$route.params.id)
           .then(response => {
             this.job = response.data;
             this.responsibility = response.data.responsibility;
@@ -44,6 +54,50 @@ module.exports = {
           }, response => {
             console.log("Error", response);
           });
+      },
+      checkEmptyFields() {
+        if(this.job.referenceId == undefined) {
+          this.job.referenceId = "";
+        }
+        if (this.job.subText == undefined){
+          this.job.subText = "";
+        }
+        if (this.job.subText == undefined){
+          this.job.subText = "";
+        }
+        if (this.job.minSalary == undefined){
+          this.job.minSalary = "";
+        }
+        if (this.job.maxSalary == undefined){
+          this.job.maxSalary = "";
+        }
+        if (this.job.salaryText == undefined){
+          this.job.salaryText = "";
+        }
+        if (this.job.area == undefined){
+          this.job.area = "";
+        }
+        if (this.job.introText == undefined){
+          this.job.introText = "";
+        }
+        if (this.job.moreInfoText == undefined){
+          this.job.moreInfoText = "";
+        }
+        if (this.job.email == undefined){
+          this.job.email = "";
+        }
+        if (this.job.contact == undefined){
+          this.job.contact = "";
+        }
+        if (this.job.expectText == undefined){
+          this.job.expectText = "";
+        }
+        if (this.job.qualifications == undefined){
+          this.job.qualifications = "";
+        }
+        if (this.job.responsibility == undefined){
+          this.job.responsibility = "";
+        }
       }
     }
 }
