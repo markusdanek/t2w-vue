@@ -12,7 +12,7 @@
             Zurück zur Übersicht
           </router-link>
         </div>
-
+        <div class="col-sm-10 col-sm-offset-1">
         <form class='form-horizontal' v-on:submit.prevent="editJob">
           <h2 class="">Pflicht</h2>
           <div class="form-group">
@@ -157,10 +157,11 @@
           </div>
         </form>
       </div>
+      </div>
       <div class="container nologin" v-show="!authenticated">
         <div class="col-sm-10 col-sm-offset-1">
           <h2>Sie sind nicht angemeldet!</h2>
-          <router-link to="/backend/login"  :class="['btn btn-primary back-to-list']">Login</router-link>
+          <router-link to="/backend/login" :class="['btn btn-primary back-to-list']">Login</router-link>
         </div>
       </div>
     </div>

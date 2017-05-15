@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+  {{this.checkAuth()}}
     <div class="more-info col-sm-11 col-md-4 col-md-offset-1">
       <div class="box">
         <h4>Eckdaten</h4>
@@ -15,6 +16,11 @@
         <a :href="`mailto:${job.email}?subject=Bewerbung als ${job.title}`" class="btn-more-jobs btn btn-danger btn-block">
           Jetzt bewerben
         </a>
+      </div>
+      <div class="" v-show="authenticated">
+        <router-link :to="{name:'JobEdit', params:{id:job._id}}"  :class="['btn btn-success btn-block']" style="margin-top: 20px;">
+          Diesen Job bearbeiten
+        </router-link>
       </div>
     </div>
   </div>
@@ -32,7 +38,19 @@
         qualifications: [],
         minSalary: [],
         maxSalary: [],
+        authenticated: false,
         loading: false,
+      }
+    },
+    methods: {
+      checkAuth() {
+        if (localStorage.getItem('profile')) {
+          this.authenticated = true;
+          console.log("authenticated");
+        } else {
+          this.authenticated = false;
+          console.log("not authenticated");
+        }
       }
     },
     created() {
@@ -75,6 +93,9 @@
           }
         }
       }
+    }
+    a.edit-job {
+    @include rem((margin-top: 20px));
     }
     .apply-btn {
       @include rem((margin-top: 25px));

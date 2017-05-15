@@ -5,7 +5,7 @@
       {{this.checkAuth()}}
       <div class="job-list container" v-show="authenticated">
         <div class="col-sm-10 col-sm-offset-1">
-          <router-link to="/backend/add"  :class="['btn btn-primary back-to-list']">
+          <router-link to="/backend/add"  :class="['btn btn-primary back-to-list pull-right']">
             Neuen Job anlegen
           </router-link>
           <table class="table table-responsive">
@@ -27,8 +27,11 @@
                   {{ job.area }}
                 </td>
                 <td>
-                  <router-link :to="{name:'JobEdit', params:{id:job._id}}">
-                    Details
+                  <router-link :to="{name:'JobEdit', params:{id:job._id}}" :class="['btn btn-warning btn-xs']">
+                    Bearbeiten
+                  </router-link>
+                  <router-link :to="{name:'JobSingle', params:{id:job._id}}" :class="['btn btn-primary btn-xs']">
+                    Ansehen
                   </router-link>
                 </td>
               </tr>
