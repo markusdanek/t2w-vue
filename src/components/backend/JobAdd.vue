@@ -39,10 +39,10 @@
     				<label for="xmlschnittstelle" class="col-sm-3 control-label">XML Schnittstelle</label>
     				<div class="col-sm-8" style="margin-left: 20px;">
     					<div class="checkbox">
-    							<input type="checkbox" :value="'stepstone'" v-model="job.xmlOnline"> Stepstone
+    							<input type="checkbox" v-model="job.xmlOnline"> Stepstone
     					</div>
     					<div class="checkbox">
-    						<input type="checkbox" :value="'karriere'" v-model="job.xmlOnline"> Karriere
+    						<input type="checkbox" v-model="job.xmlOnline"> Karriere
     					</div>
     				</div>
     			</div>
@@ -183,6 +183,18 @@
       }
     },
     methods: {
+      onChange(value, $event){
+        if (!this.job.xmlOnline)
+          this.job.xmlOnline = []
+
+        const index = this.job.xmlOnline.findIndex(v => v == value)
+        const checked = $event.target.checked
+
+        if (checked && index < 0)
+          this.job.xmlOnline.push(value)
+        if (!checked && index >= 0)
+          this.job.xmlOnline.splice(index, 1)
+      },
       checkAuth() {
         if (localStorage.getItem('profile')) {
           this.authenticated = true;
