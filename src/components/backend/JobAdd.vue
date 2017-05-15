@@ -1,8 +1,9 @@
 <template>
   <div>
     <backend-hero></backend-hero>
+    {{this.checkAuth()}}
     <div class="wrapper">
-      <div class="container">
+      <div class="container" v-show="authenticated">
         <div class="col-sm-12 col-sm-offset-4">
           <notification v-bind:notifications="notifications"></notification>
         </div>
@@ -149,6 +150,12 @@
           </div>
         </form>
       </div>
+      <div class="container nologin" v-show="!authenticated">
+        <div class="col-sm-10 col-sm-offset-1">
+          <h2>Sie sind nicht angemeldet!</h2>
+          <router-link to="/backend/login"  :class="['btn btn-primary back-to-list']">Login</router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -166,6 +173,7 @@
       return {
         job: {},
         loading: false,
+        authenticated: false,
         notifications: [],
         qualification: [],
         responsibility: []
@@ -177,6 +185,15 @@
       }
     },
     methods: {
+      checkAuth() {
+        if (localStorage.getItem('profile')) {
+          this.authenticated = true;
+          console.log("authenticated");
+        } else {
+          this.authenticated = false;
+          console.log("not authenticated");
+        }
+      },
       addQualification() {
         this.qualification.push({ text: '' });
       },
@@ -218,6 +235,10 @@
     @include rem((margin: 20px));
     background: $color-red-t2w;
     border: none;
+  }
+  .nologin {
+    @include rem((padding: 50px 0));
+    text-align: center;
   }
   form {
     h2 {

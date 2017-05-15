@@ -2,14 +2,12 @@
 <div>
   <backend-hero></backend-hero>
   <div class="wrapper">
-    {{authenticated}}
     <div class="container">
       <div class="row">
         <div class="col-sm-9 col-sm-offset-1 loggedin" v-show="authenticated">
-
           <div class="media">
             <div class="media-left">
-              <!-- <img :src="userPicture" alt="userPicture" width="150px;"> -->
+              <img :src="this.getUserPicture()" alt="userPicture" width="150px;">
             </div>
             <div class="media-body">
               <h2 class="media-heading">Hallo {{this.getLoggedInUserName()}}</h2>
@@ -43,7 +41,6 @@
     data() {
       return {
         localStorage,
-        // userPicture: JSON.parse(localStorage.getItem('profile')).picture,
         authenticated: false,
         lock: new Auth0Lock('fjIMo36jLsTc4rYl6BOCIizBDK62hTZY', 'mrks.eu.auth0.com', {auth: { autoParseHash: false, redirect: false }})
       }
@@ -94,6 +91,14 @@
         } else {
             return '';
         }
+      },
+      getUserPicture() {
+        var url = JSON.parse(localStorage.getItem('profile'));
+        if (url) {
+          return url.picture;
+        } else {
+          return '';
+        }
       }
     }
   }
@@ -108,10 +113,10 @@
   .login {
     text-align: center;
     h2 {
-      @include rem((margin: 20px auto));
+      @include rem((margin: 20px 0));
     }
     button {
-      @include rem((margin: 20px auto));
+      @include rem((margin: 20px 0));
     }
   }
   .loggedin {

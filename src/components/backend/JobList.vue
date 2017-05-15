@@ -1,8 +1,8 @@
-<template :authenticated="authenticated">
+<template>
   <div>
     <backend-hero></backend-hero>
     <div class="wrapper">
-      {{authenticated}}
+      {{this.checkAuth()}}
       <div class="job-list container" v-show="authenticated">
         <div class="col-sm-10 col-sm-offset-1">
           <router-link to="/backend/add"  :class="['btn btn-primary back-to-list']">
@@ -36,10 +36,11 @@
           </table>
         </div>
       </div>
-      <div class="notloggedin" v-show="!authenticated">
-        <router-link to="/backend/login"  :class="['btn btn-primary back-to-list']">
-          Bitte melden Sie sich zuerst an!
-        </router-link>
+      <div class="container nologin" v-show="!authenticated">
+        <div class="col-sm-10 col-sm-offset-1">
+          <h2>Sie sind nicht angemeldet!</h2>
+          <router-link to="/backend/login"  :class="['btn btn-primary back-to-list']">Login</router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -54,11 +55,20 @@
       return {
         jobs: [],
         localStorage,
+        authenticated: false,
         loading: false,
       }
     },
-    props: {
-      authenticated: Boolean
+    methods: {
+      checkAuth() {
+        if (localStorage.getItem('profile')) {
+          this.authenticated = true;
+          console.log("authenticated");
+        } else {
+          this.authenticated = false;
+          console.log("not authenticated");
+        }
+      }
     },
     created() {
       this.retrieveJobs();
@@ -70,10 +80,6 @@
     },
     mixins: [JobMethods]
   }
-
-  function checkAuth() {
-    return !!localStorage.getItem('id_token');
-  }
 </script>
 
 <style scoped lang="scss">
@@ -83,6 +89,10 @@
     @include rem((margin: 20px 20px 20px 0px));
     background: $color-red-t2w;
     border: none;
+  }
+  .nologin {
+    @include rem((padding: 50px 0));
+    text-align: center;
   }
   .job-list {
     table.table {

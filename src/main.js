@@ -4,6 +4,7 @@ import App from './App'
 import router from './router/index'
 import VueResource from 'vue-resource'
 import Icon from 'vue-awesome/components/Icon.vue'
+import store from './store/store'
 Vue.component('icon', Icon)
 
 Vue.use(VueResource);
@@ -22,6 +23,7 @@ Vue.http.interceptors.push(function(request, next) {
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
