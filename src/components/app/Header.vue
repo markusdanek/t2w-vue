@@ -30,6 +30,9 @@
             <li>
               <router-link to="/kontakt" class="nav-link">Kontakt</router-link>
             </li>
+            <li v-show="authenticated">
+              <router-link to="/backend/list" class="nav-link">Backend</router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -51,6 +54,20 @@
           $('h1 a.navbar-brand').removeClass('shrink');
         }
       });
+    },
+    created() {
+      this.checkAuth();
+    },
+    methods: {
+      checkAuth() {
+        if (localStorage.getItem('profile')) {
+          this.authenticated = true;
+          console.log("authenticated");
+        } else {
+          this.authenticated = false;
+          console.log("not authenticated");
+        }
+      }
     }
   }
 </script>

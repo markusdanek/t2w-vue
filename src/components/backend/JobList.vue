@@ -2,7 +2,6 @@
   <div>
     <backend-hero></backend-hero>
     <div class="wrapper">
-      {{this.checkAuth()}}
       <div class="job-list container" v-show="authenticated">
         <div class="col-sm-10 col-sm-offset-1">
           <router-link to="/backend/add"  :class="['btn btn-primary back-to-list pull-right']">
@@ -42,7 +41,9 @@
       <div class="container nologin" v-show="!authenticated">
         <div class="col-sm-10 col-sm-offset-1">
           <h2>Sie sind nicht angemeldet!</h2>
-          <router-link to="/backend/login"  :class="['btn btn-primary back-to-list']">Login</router-link>
+          <router-link to="/backend/login"  :class="['btn btn-primary back-to-list']">
+            Zur Anmeldeseite
+          </router-link>
         </div>
       </div>
     </div>
@@ -72,6 +73,9 @@
           console.log("not authenticated");
         }
       }
+    },
+    mounted() {
+      this.checkAuth();
     },
     created() {
       this.retrieveJobs();

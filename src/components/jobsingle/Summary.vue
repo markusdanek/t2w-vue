@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-  {{this.checkAuth()}}
     <div class="more-info col-sm-11 col-md-4 col-md-offset-1">
       <div class="box">
         <h4>Eckdaten</h4>
@@ -41,6 +40,9 @@
         authenticated: false,
         loading: false,
       }
+    },
+    mounted() {
+      this.checkAuth();
     },
     methods: {
       checkAuth() {

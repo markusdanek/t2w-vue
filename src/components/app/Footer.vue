@@ -27,6 +27,9 @@
                 <li>
                   <router-link to="/impressum">Impressum</router-link>
                 </li>
+                <li>
+                  <router-link to="/backend/login">Login</router-link>
+                </li>
               </ul>
             </div>
             <div class="col-md-4 col-md-offset-1">
@@ -73,6 +76,20 @@
       },
       year() {
         return (new Date()).getUTCFullYear();
+      }
+    },
+    mounted() {
+      this.checkAuth();
+    },
+    methods: {
+      checkAuth() {
+        if (localStorage.getItem('profile')) {
+          this.authenticated = true;
+          console.log("authenticated");
+        } else {
+          this.authenticated = false;
+          console.log("not authenticated");
+        }
       }
     }
   }
