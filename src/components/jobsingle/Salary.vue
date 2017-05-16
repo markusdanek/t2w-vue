@@ -67,7 +67,6 @@
       .max {
         background: rgba($color-red-t2w, 0.5);
         background: -moz-linear-gradient(left, rgba($color-red-t2w, 0.5) 0%, #ffffff 100%);
-        background: -webkit-linear-gradient(left, rgba($color-red-t2w, 0.5) 0%,#ffffff 100%);
         background: linear-gradient(to right, rgba($color-red-t2w, 0.5) 0%,#ffffff 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#cc0000', endColorstr='#ffffff',GradientType=1 );
         span {

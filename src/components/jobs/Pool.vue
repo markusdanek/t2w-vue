@@ -184,6 +184,14 @@
         border: 1px solid $color-red-t2w;
         background: $color-red-t2w;
         width: 100%;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        &:hover {
+          background: $color-red;
+          border: 1px solid $color-red;
+          -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+        }
       }
       ul {
         @include rem((margin-top: -5px));

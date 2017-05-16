@@ -60,7 +60,6 @@
         });
 
         self.lock.on('authenticated', (authResult) => {
-          console.log('authenticated');
           localStorage.setItem('id_token', authResult.idToken);
           self.lock.getProfile(authResult.idToken, (error, profile) => {
             if (error) {

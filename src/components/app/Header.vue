@@ -62,10 +62,8 @@
       checkAuth() {
         if (localStorage.getItem('profile')) {
           this.authenticated = true;
-          console.log("authenticated");
         } else {
           this.authenticated = false;
-          console.log("not authenticated");
         }
       }
     }
