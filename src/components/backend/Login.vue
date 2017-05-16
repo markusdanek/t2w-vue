@@ -13,13 +13,13 @@
               <h2 class="media-heading">Hallo {{this.getLoggedInUserName()}}</h2>
               <p>Du bist bereits eingeloggt!</p>
               <p>Klicke hier um zur Job Verwaltung zu kommen: <router-link to="/backend/list">API Job Übersicht</router-link></p>
-              <button class="btn btn-danger btn-xs" @click="logout()">Abmelden</button>
+              <button class="btn-logout btn btn-xs" @click="logout()">Abmelden</button>
             </div>
           </div>
         </div>
-        <div class="col-sm-9 col-sm-offset-1 login" v-show="!authenticated">
+        <div class="col-sm-12 login" v-show="!authenticated">
           <h2>Sie sind zur Zeit nicht angemeldet!</h2>
-          <button class="btn btn-success btn-lg" @click="login()">Login</button>
+          <button class="btn-login btn btn-lg" @click="login()">Login</button>
         </div>
       </div>
     </div>
@@ -118,6 +118,12 @@
     button {
       @include rem((margin: 20px 0));
     }
+  }
+  button.btn-login {
+    @extend %ghost-button-green;
+  }
+  button.btn-logout {
+    @extend %ghost-button-red;
   }
   .loggedin {
     @include rem((margin-top: 50px));

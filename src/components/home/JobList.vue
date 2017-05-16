@@ -104,18 +104,8 @@
   		}
   	}
     a.btn-more-jobs {
-    	@include transition(all 0.5s ease);
     	@include rem((margin-right: 15px));
-    	background: transparent;
-    	color: $color-black-medium;
-    	border-radius: 0;
-    	border: 2px solid $color-red-t2w;
-    	&:hover {
-    		@include transition(all 0.5s ease);
-    		background: $color-red-t2w;
-    		border: 2px solid $color-red-t2w;
-    		color: $color-white;
-    	}
+    	@extend %ghost-button-red;
     }
     @media (max-width: $screen-md) {
     	ul.jobs {

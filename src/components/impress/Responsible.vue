@@ -10,7 +10,7 @@
           </li>
           <li>
             Design &amp; Entwicklung:
-            <a href="http://www.creativebrains.net"><span>Markus Danek - creativebrains.net</span></a>
+            <a href="http://www.creativebrains.net"><span>Markus Danek</span></a>
           </li>
         </ul>
         <hr />

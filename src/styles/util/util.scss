@@ -4,3 +4,119 @@
 @import "color";
 @import "var";
 @import "hero";
+
+%ghost-button-red {
+  @include rem(font-size, 18px);
+  background: none;
+  color: $color-black-medium;
+  border: 2px solid $color-red-t2w;
+  border-radius: 0;
+  &:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: $color-red-t2w;
+    border: 2px solid $color-red-t2w;
+    color: $color-white;
+  }
+}
+
+%ghost-button-red-inverted {
+  background: $color-red-t2w;
+  color: $color-white;
+  border: 2px solid $color-red-t2w;
+  border-radius: 0;
+  &:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: none;
+    border: 2px solid $color-red-t2w;
+    color: $color-black-medium
+  }
+}
+
+%ghost-button-green {
+  @include rem(font-size, 18px);
+  background: none;
+  color: $color-black-medium;
+  border: 2px solid $color-green;
+  border-radius: 0;
+  &:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: $color-green;
+    border: 2px solid $color-green;
+    color: $color-white;
+  }
+}
+
+%ghost-button-green-inverted {
+  background: $color-green;
+  color: $color-white;
+  border: 2px solid $color-green;
+  border-radius: 0;
+  &:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: none;
+    border: 2px solid $color-green;
+    color: $color-black-medium
+  }
+}
+
+%ghost-button-blue {
+  @include rem(font-size, 18px);
+  background: none;
+  color: $color-black-medium;
+  border: 2px solid $color-blue;
+  border-radius: 0;
+  &:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: $color-blue;
+    border: 2px solid $color-blue;
+    color: $color-white;
+  }
+}
+
+%ghost-button-blue-inverted {
+  background: $color-blue;
+  color: $color-white;
+  border: 2px solid $color-blue;
+  border-radius: 0;
+  &:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: none;
+    border: 2px solid $color-blue;
+    color: $color-black-medium
+  }
+}
+
+%ghost-button-orange {
+  @include rem(font-size, 18px);
+  background: none;
+  color: $color-black-medium;
+  border: 2px solid $color-orange;
+  border-radius: 0;
+  &:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: $color-orange;
+    border: 2px solid $color-orange;
+    color: $color-white;
+  }
+}
+
+%ghost-button-orange-inverted {
+  background: $color-orange;
+  color: $color-white;
+  border: 2px solid $color-orange;
+  border-radius: 0;
+  &:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: none;
+    border: 2px solid $color-orange;
+    color: $color-black-medium
+  }
+}

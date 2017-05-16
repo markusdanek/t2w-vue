@@ -26,10 +26,10 @@
                   {{ job.area }}
                 </td>
                 <td>
-                  <router-link :to="{name:'JobEdit', params:{id:job._id}}" :class="['btn btn-warning btn-xs']">
+                  <router-link :to="{name:'JobEdit', params:{id:job._id}}" :class="['btn-edit btn btn-warning btn-xs']">
                     Bearbeiten
                   </router-link>
-                  <router-link :to="{name:'JobSingle', params:{id:job._id}}" :class="['btn btn-primary btn-xs']">
+                  <router-link :to="{name:'JobSingle', params:{id:job._id}}" :class="['btn-see btn btn-primary btn-xs']">
                     Ansehen
                   </router-link>
                 </td>
@@ -41,7 +41,7 @@
       <div class="container nologin" v-show="!authenticated">
         <div class="col-sm-10 col-sm-offset-1">
           <h2>Sie sind nicht angemeldet!</h2>
-          <router-link to="/backend/login"  :class="['btn btn-primary back-to-list']">
+          <router-link to="/backend/login"  :class="['btn-login btn']">
             Zur Anmeldeseite
           </router-link>
         </div>
@@ -92,11 +92,6 @@
 <style scoped lang="scss">
   @import "../../styles/util/util.scss";
 
-  a.back-to-list {
-    @include rem((margin: 20px 20px 20px 0px));
-    background: $color-red-t2w;
-    border: none;
-  }
   .nologin {
     @include rem((padding: 50px 0));
     text-align: center;
@@ -129,5 +124,19 @@
         }
       }
     }
+  }
+  a.back-to-list {
+    @include rem((margin: 20px 20px 20px 0));
+    @extend %ghost-button-red;
+  }
+  a.btn-edit {
+    @extend %ghost-button-orange-inverted;
+  }
+  a.btn-login {
+    @include rem((margin-top: 20px));
+    @extend %ghost-button-green;
+  }
+  a.btn-see {
+    @extend %ghost-button-blue-inverted;
   }
 </style>

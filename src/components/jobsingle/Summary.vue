@@ -16,8 +16,8 @@
           Jetzt bewerben
         </a>
       </div>
-      <div class="" v-show="authenticated">
-        <router-link :to="{name:'JobEdit', params:{id:job._id}}"  :class="['btn btn-success btn-block']" style="margin-top: 20px;">
+      <div class="apply-btn" v-show="authenticated">
+        <router-link :to="{name:'JobEdit', params:{id:job._id}}"  :class="['btn-edit-job btn btn-success btn-block']">
           Diesen Job bearbeiten
         </router-link>
       </div>
@@ -97,12 +97,15 @@
       }
     }
     a.edit-job {
-    @include rem((margin-top: 20px));
+      @include rem((margin-top: 20px));
     }
     .apply-btn {
       @include rem((margin-top: 25px));
       a.btn-more-jobs {
-        @include rem(font-size, 18px);
+        @extend %ghost-button-red;
+      }
+      a.btn-edit-job {
+        @extend %ghost-button-green;
       }
     }
   }
