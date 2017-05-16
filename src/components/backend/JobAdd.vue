@@ -52,6 +52,12 @@
       				</div>
       			</div>
             <div class="form-group">
+      				<label for="title" class="col-sm-3 control-label">Zweiter Titel</label>
+      				<div class="col-sm-8">
+      					<input type='text' name='title' v-model="job.subTitle" class='form-control' placeholder='' required>
+      				</div>
+      			</div>
+            <div class="form-group">
       				<label for="subText" class="col-sm-3 control-label">Job Untertitel (nach Titel der Anzeige)</label>
       				<div class="col-sm-8">
       					<input type='text' name='subText' v-model="job.subText" class='form-control' placeholder='.. mit spannenden Weiterentwicklungsmöglichkeiten'>

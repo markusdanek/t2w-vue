@@ -62,9 +62,6 @@ module.exports = {
         if (this.job.subText == undefined){
           this.job.subText = "";
         }
-        if (this.job.subText == undefined){
-          this.job.subText = "";
-        }
         if (this.job.minSalary == undefined){
           this.job.minSalary = "";
         }
@@ -76,6 +73,9 @@ module.exports = {
         }
         if (this.job.area == undefined){
           this.job.area = "";
+        }
+        if (this.job.subTitle == undefined){
+          this.job.subTitle = "";
         }
         if (this.job.introText == undefined){
           this.job.introText = "";
