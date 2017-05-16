@@ -54,7 +54,7 @@
             <div class="form-group">
       				<label for="title" class="col-sm-3 control-label">Zweiter Titel</label>
       				<div class="col-sm-8">
-      					<input type='text' name='title' v-model="job.subTitle" class='form-control' placeholder='' required>
+      					<input type='text' name='title' v-model="job.subTitle" class='form-control' placeholder=''>
       				</div>
       			</div>
             <div class="form-group">
