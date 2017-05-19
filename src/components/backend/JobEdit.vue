@@ -130,10 +130,15 @@
                 </div>
               </div>
       			</div>
+            <div class="row">
+              <a @click.prevent="addQualification" class="col-sm-offset-3 addmore">
+                + Neue Qualifikation
+              </a>
+            </div>
             <hr>
-            <h2>Verantwortung</h2>
+            <h2>Aufgaben</h2>
             <div class="form-group" v-for="(resp, index) in job.responsibility">
-      				<label for="responsibility" class="col-sm-3 control-label">Verantwortung {{ index }}</label>
+      				<label for="responsibility" class="col-sm-3 control-label">Aufgaben {{ index }}</label>
               <div class="row">
                 <div class="col-sm-7">
         					<input type='text' :name="'resp'+index" v-model="responsibility[index]" class='form-control' placeholder='Sie müssen...'>
@@ -228,11 +233,14 @@
           this.authenticated = false;
         }
       },
-      removeQualifiaction() {
-        this.qualifications.splice(this.qualifications.index, 1);
+      addQualification() {
+        this.qualifications.push({ text: '' });
       },
-      removeResponsibility() {
-        this.responsibility.splice(this.responsibility.index, 1);
+      removeQualifiaction(index) {
+        this.qualifications.splice(index, 1);
+      },
+      removeResponsibility(index) {
+        this.responsibility.splice(index, 1);
       },
       editJob() {
         let job = Object.assign({}, this.job);

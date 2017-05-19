@@ -131,9 +131,9 @@
               </a>
             </div>
             <hr>
-            <h2>Verantwortungen</h2>
+            <h2>Aufgaben</h2>
             <div class="form-group" v-for="resp in responsibility">
-      				<label for="responsibility" class="col-sm-3 control-label">Verantwortung</label>
+      				<label for="responsibility" class="col-sm-3 control-label">Aufgaben</label>
       				<div class="col-sm-8">
       					<input type='text' name='responsibility' v-model="resp.text" class='form-control' placeholder='Sie müssen...'>
       				</div>
