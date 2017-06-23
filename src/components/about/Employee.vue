@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-sm-6 col-lg-3">
             <img src="/static/images/team/irina-friedrich.jpg" class="photo img-circle" />
-            <h4>Irina Friedrich</h4>
+            <h4>Irina Friedrich-Ahrer</h4>
             <p>
               <a href="mailto:irina.friedrich@team2work.at">
                 E: irina.friedrich@team<span class="two">2</span>work.at

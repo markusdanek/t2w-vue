@@ -5,7 +5,7 @@
         <div class="who-is-behind">
           <h2>Wer steckt hinter team<span class="two">2</span>work?</h2>
           <p>
-            team<span class="two">2</span>work – das sind Irina Friedrich und Monika Hrib, die das Unternehmen 2007 gegründet haben, und ihr Team.
+            team<span class="two">2</span>work – das sind Irina Friedrich-Ahrer und Monika Hrib, die das Unternehmen 2007 gegründet haben, und ihr Team.
             Insgesamt bringen wir 19 Jahre Erfahrung in der Personaldienstleistung für verschiedenste Branchen mit.
             Was sich in dieser Zeit nie geändert hat: Unser persönlicher Einsatz, unser praktisches Denken und unser Gespür für unausgesprochene Anforderungen.
             Das sind die Stärken, die Kunden und Bewerber an uns schätzen.

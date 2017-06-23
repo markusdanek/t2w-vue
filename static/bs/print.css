@@ -169,6 +169,7 @@ a.more-info {
 body {
   border-right: none !important;
   padding-top: 0px !important;
+  font-size: 12pt !important; 
 }
 
 .section-hero {

@@ -8,7 +8,7 @@
           <li>Inhaber der Website:
             <span>team<span class="two">2</span>work Arbeitskräfteüberlassung GmbH</span></li>
           <li>Gewerbliche- und Handelsrechtliche Geschäftsführerinnen:
-            <span>Irina Friedrich und Monika Hrib</span></li>
+            <span>Irina Friedrich-Ahrer und Monika Hrib</span></li>
           <li>Firmenbuch: <span>Handelsgericht Wien</span></li>
           <li>Firmenbuchnummer: <span>FN 296741i</span></li>
           <li>UID: <span>ATU 63536533</span></li>
