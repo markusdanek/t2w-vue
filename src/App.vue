@@ -16,7 +16,22 @@
   Vue.component('app-footer', App_Footer);
 
   export default {
-    name: 'app'
+    name: 'app',
+    methods: {
+      checkTimestampAge() {
+        var maxAge = (1000*1)*(60*1)*(60*12)*(24*30);
+        var timestamp = new Date(localStorage['timestamp']);
+        var currentTime = new Date();
+        if ((currentTime - timestamp) > maxAge) {
+          localStorage.removeItem('id_token');
+          localStorage.removeItem('profile');
+          this.authenticated = false;
+        }
+      }
+    },
+    mounted() {
+      this.checkTimestampAge();
+    }
   }
 </script>
 

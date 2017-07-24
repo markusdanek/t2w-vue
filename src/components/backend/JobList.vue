@@ -10,10 +10,10 @@
           <table class="table table-responsive">
             <thead>
               <tr>
-                <th>Referenznummer</th>
-                <th>Titel</th>
-                <th>Gebiet</th>
-                <th>Aktion</th>
+                <th class="col-md-2">Referenznummer</th>
+                <th class="col-md-6">Titel</th>
+                <th class="col-md-2">Gebiet</th>
+                <th class="col-md-2">Aktion</th>
               </tr>
             </thead>
             <tbody>

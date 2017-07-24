@@ -61,6 +61,7 @@
 
         self.lock.on('authenticated', (authResult) => {
           localStorage.setItem('id_token', authResult.idToken);
+          localStorage.setItem('timestamp', new Date());
           self.lock.getProfile(authResult.idToken, (error, profile) => {
             if (error) {
               return;
@@ -81,6 +82,7 @@
       logout() {
         localStorage.removeItem('id_token');
         localStorage.removeItem('profile');
+        localStorage.removeItem('timestamp');
         this.authenticated = false;
       },
       getLoggedInUserName() {

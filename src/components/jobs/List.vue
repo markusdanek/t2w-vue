@@ -4,8 +4,8 @@
       <table class="table table-responsive">
         <thead>
           <tr>
-            <th>Jobtitel</th>
-            <th>Gebiet</th>
+            <th class="col-md-9">Jobtitel</th>
+            <th class="col-md-3">Gebiet</th>
           </tr>
         </thead>
         <tbody>

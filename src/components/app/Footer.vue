@@ -53,13 +53,13 @@
                 &copy; {{year}} <strong>team<span class="two">2</span>work Arbeitskräfteüberlassung GmbH</strong> - Alle Rechte vorbehalten
               </p>
             </div>
-            <div class="col-sm-4">
+            <!-- <div class="col-sm-4">
               <p>
                 <a href="http://www.creativebrains.net" target="_blank">
                   Design &amp; Entwicklung: Markus Danek
                 </a>
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
