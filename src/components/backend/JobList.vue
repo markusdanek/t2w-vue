@@ -17,7 +17,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="job in jobs">
+                            <tr v-for="job in orderedJobs">
                                 <td>{{ job.referenceId }}</td>
                                 <td class="jobtitle">
                                     {{ job.title }} m/w
@@ -70,6 +70,11 @@
                 } else {
                     this.authenticated = false;
                 }
+            }
+        },
+        computed: {
+            orderedJobs() {
+                return _.orderBy(this.jobs, 'createdAt', ['desc', 'asc'])
             }
         },
         mounted() {
