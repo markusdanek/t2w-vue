@@ -5,7 +5,11 @@ import router from './router/index'
 import VueResource from 'vue-resource'
 import Icon from 'vue-awesome/components/Icon.vue'
 import store from './store/store'
-Vue.component('icon', Icon)
+import vueScrollBehavior from 'vue-scroll-behavior'
+
+Vue.use(vueScrollBehavior, { router: router });
+
+Vue.component('icon', Icon);
 
 Vue.use(VueResource);
 

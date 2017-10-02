@@ -73,7 +73,7 @@ export default new Router({
             redirect: '/'
         }
     ],
-    scrollBehavior(to, from, savedPosition) {
-        return {x: 0, y: 0}
+    scrollBehavior: function (to, from, savedPosition) {
+        return savedPosition || { x: 0, y: 0 }
     }
 })
