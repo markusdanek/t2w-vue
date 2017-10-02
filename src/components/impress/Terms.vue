@@ -5,12 +5,12 @@
         <h3>Allgemeine Geschäftsbedingungen</h3>
           <ul>
           <li>
-            <a target="_blank" href="files/agb/AGB_Personalbereitstellung_2016.pdf">
+            <a target="_blank" href="static/files/AGB_Personalbereitstellung_2016.pdf">
               &raquo; AGB für Personalbereitstellung - Stand {{year}} (PDF, 2MB)
             </a>
           </li>
           <li>
-            <a target="_blank" href="files/agb/AGB_Personalvermittlung_2016.pdf">
+            <a target="_blank" href="static/files/AGB_Personalvermittlung_2016.pdf">
               &raquo; AGB für Personalvermittlung - Stand {{year}} (PDF, 1.5MB)
             </a>
           </li>
