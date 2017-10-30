@@ -6,6 +6,9 @@ import VueResource from 'vue-resource'
 import Icon from 'vue-awesome/components/Icon.vue'
 import store from './store/store'
 import vueScrollBehavior from 'vue-scroll-behavior'
+import VueAnalytics from 'vue-analytics'
+
+Vue.use(VueAnalytics, { id: 'UA-54514383-4', router })
 
 Vue.use(vueScrollBehavior, { router: router });
 
