@@ -2,11 +2,11 @@
     <div class="apply-section col-sm-9">
         <div v-if="job.moreInfoText">
             <h3>Unser Kunde bietet:</h3>
-            <p>{{job.moreInfoText}}</p>
+            <vue-markdown :source="job.moreInfoText"></vue-markdown>
         </div>
         <hr />
         <div>
-            <p>{{job.expectText}}</p>
+            <vue-markdown :source="job.expectText"></vue-markdown></p>
         </div>
         <hr />
         <div class="apply-contact">
@@ -20,6 +20,7 @@
 
 <script>
     import JobMethods from '../../mixins/job'
+    import VueMarkdown from 'vue-markdown'
 
     export default {
         name: 'jobsingle-apply',
@@ -31,7 +32,8 @@
         created() {
             this.retrieveJobSingle();
         },
-        mixins: [JobMethods]
+        mixins: [JobMethods],
+        components:{ 'vue-markdown' : VueMarkdown }
     }
 </script>
 

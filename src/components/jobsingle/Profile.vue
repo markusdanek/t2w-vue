@@ -1,29 +1,37 @@
 <template>
     <div class="job-detail col-sm-11 col-md-6">
         <div class="intro block">
-            <p>{{job.introText}}</p>
+            <vue-markdown :source="job.introText"></vue-markdown>
         </div>
         <div class="title block">
-            <h2>{{job.title}} m/w</h2>
+            <h2>
+                {{job.title}}
+            </h2>
         </div>
         <div class="title block" v-if="job.subTitle">
-            <h2>{{job.subTitle}}</h2>
+            <h2>
+                {{job.subTitle}}
+            </h2>
         </div>
         <div class="intro block subtext" v-if="job.subText">
-            <p>{{job.subText}}</p>
+            <vue-markdown :source="job.subText"></vue-markdown>
         </div>
         <hr />
         <div class="working-info block">
             <h3>Aufgabenbereich</h3>
             <ul v-for="response in responsibility">
-                <li>{{response}}</li>
+                <li>
+                    <vue-markdown :source="response"></vue-markdown>
+                </li>
             </ul>
         </div>
         <hr />
         <div class="qualifications block">
             <h3>Anforderungen</h3>
             <ul v-for="quali in qualifications">
-                <li>{{quali}}</li>
+                <li>
+                    <vue-markdown :source="quali"></vue-markdown>
+                </li>
             </ul>
         </div>
     </div>
@@ -31,6 +39,7 @@
 
 <script>
     import JobMethods from '../../mixins/job'
+    import VueMarkdown from 'vue-markdown'
 
     export default {
         name: 'jobsingle-profile',
@@ -47,7 +56,8 @@
         created() {
             this.retrieveJobSingle();
         },
-        mixins: [JobMethods]
+        mixins: [JobMethods],
+        components:{ 'vue-markdown' : VueMarkdown }
     }
 </script>
 
