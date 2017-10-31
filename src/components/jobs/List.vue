@@ -14,7 +14,7 @@
                             <router-link :to="{name:'JobSingle', params:{id:job._id}}">
                                 {{ job.title }} m/w
                             </router-link>
-                            <p>{{ job.introText | truncate(150) }} </p>
+                            <vue-markdown :source="job.introText | truncate(150)"></vue-markdown>
                         </td>
                         <td>
                             {{ job.area }}
@@ -28,6 +28,7 @@
 
 <script>
     import JobMethods from '../../mixins/job'
+    import VueMarkdown from 'vue-markdown'
 
     export default {
         name: 'jobs-list',
@@ -53,7 +54,8 @@
         created() {
             this.retrieveJobsRandom();
         },
-        mixins: [JobMethods]
+        mixins: [JobMethods],
+        components:{ 'vue-markdown' : VueMarkdown }
     }
 </script>
 
