@@ -153,6 +153,18 @@
                         </div>
                     </form>
                 </div>
+                <div class="formating-info col-sm-10 col-sm-offset-1">
+                    <div class="alert alert-info" role="alert">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-1">
+                                <b>Fett</b>: __Wort__ (zwei Unterstrich vor und nach dem Wort)<br/>
+                            </div>
+                            <div class="col-sm-5">
+                                <em>Kursiv</em>: _Wort_ (ein Unterstrich vor und nach dem Wort)
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="container nologin" v-show="!authenticated">
                 <div class="col-sm-10 col-sm-offset-1">
@@ -275,6 +287,14 @@
         }
         a.addmore {
             padding-left: 15px;
+        }
+    }
+    .formating-info {
+        @include rem((margin-top: 20px));
+        .alert-info {
+            background-color: $color-background;
+            color: $color-black;
+            border-color: $color-red-t2w;
         }
     }
 </style>
