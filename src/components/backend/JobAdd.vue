@@ -292,7 +292,7 @@
     .formating-info {
         @include rem((margin-top: 20px));
         .alert-info {
-            background-color: $color-background;
+            background-color: transparent;
             color: $color-black;
             border-color: $color-red-t2w;
         }
