@@ -5,7 +5,7 @@
         </div>
         <div class="title block">
             <h2>
-                {{job.title}}
+                {{job.title}} m/w
             </h2>
         </div>
         <div class="title block" v-if="job.subTitle">
