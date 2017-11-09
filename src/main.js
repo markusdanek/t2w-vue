@@ -7,6 +7,13 @@ import Icon from 'vue-awesome/components/Icon.vue'
 import store from './store/store'
 import vueScrollBehavior from 'vue-scroll-behavior'
 import VueAnalytics from 'vue-analytics'
+import Raven from 'raven-js';
+import RavenVue from 'raven-js/plugins/vue';
+
+Raven
+    .config('https://b554bfe502e94991b67b436870ed4bb1@sentry.io/242402')
+    .addPlugin(RavenVue, Vue)
+    .install();
 
 Vue.use(VueAnalytics, { id: 'UA-54514383-4', router })
 
