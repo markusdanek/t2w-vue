@@ -10,6 +10,7 @@
     "upload": "npm run build; s3-deploy './dist/**' --cwd './dist/' --signatureVersion v4 --bucket www.team2work.at"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "es6-promise": "^4.1.1",
     "lodash": "4.17.4",
     "raven-js": "^3.19.1",
