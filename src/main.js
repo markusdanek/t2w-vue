@@ -9,6 +9,9 @@ import vueScrollBehavior from 'vue-scroll-behavior'
 import VueAnalytics from 'vue-analytics'
 import Raven from 'raven-js';
 import RavenVue from 'raven-js/plugins/vue';
+import Es6Promise from 'es6-promise';
+
+Es6Promise.polyfill();
 
 Raven
     .config('https://b554bfe502e94991b67b436870ed4bb1@sentry.io/242402', {
