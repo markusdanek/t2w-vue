@@ -17,19 +17,19 @@
                         <div class="form-group">
                             <label for="title" class="col-sm-3 control-label">Titel der Anzeige</label>
                             <div class="col-sm-8">
-                                <input type='text' name='title' :value="job.title" v-model="job.title" class='form-control' placeholder='1 Software Entwickler (m/w)' required>
+                                <input type='text' name='title' v-model="job.title" class='form-control' placeholder='1 Software Entwickler (m/w)' required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="salary" class="col-sm-3 control-label">Gehalt</label>
                             <div class="col-sm-8">
-                                <input type='text' name='salary' :value="job.salary" v-model="job.salary" class='form-control' placeholder='3000'>
+                                <input type='text' name='salary' v-model="job.salary" class='form-control' placeholder='3000'>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="hours" class="col-sm-3 control-label">Wochenstunden</label>
                             <div class="col-sm-8">
-                                <input type='text' name='hours' :value="job.hours" v-model="job.hours" class='form-control' placeholder='38,5h/Woche' required>
+                                <input type='text' name='hours' v-model="job.hours" class='form-control' placeholder='38,5h/Woche' required>
                             </div>
                         </div>
                         <hr>
