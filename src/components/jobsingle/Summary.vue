@@ -29,7 +29,7 @@
                 </router-link>
             </div>
             <div class="gdpr">
-              <input type="checkbox" id="checkbox" v-model="checked"> Ich akzeptiere die <router-link to="/impress">Datenschutzbestimmungen</router-link>
+              <input type="checkbox" id="checkbox" v-model="checked"> Ich akzeptiere die <router-link to="/impressum">Datenschutzbestimmungen</router-link>
             </div>
         </div>
     </div>
