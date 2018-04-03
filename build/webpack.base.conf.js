@@ -8,6 +8,7 @@ function resolve (dir) {
 }
 
 module.exports = {
+  mode: 'development',
   entry: {
     app: ['babel-polyfill', './src/main.js']
   },

@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <cookie-message></cookie-message>
         <app-header></app-header>
         <div class="container">
             <router-view></router-view>
@@ -12,8 +13,10 @@
     import Vue from 'vue'
     import App_Header from '@/components/app/Header'
     import App_Footer from '@/components/app/Footer'
+    import CookieMessage from '@/components/CookieMessage/CookieMessage'
     Vue.component('app-header', App_Header);
     Vue.component('app-footer', App_Footer);
+    Vue.component('cookie-message', CookieMessage);
 
     export default {
         name: 'app',
