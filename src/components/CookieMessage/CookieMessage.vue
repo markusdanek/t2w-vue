@@ -3,9 +3,9 @@
     <div class="Cookie" :class="containerPosition" v-if="isOpen">
       <div class="Cookie__content col-sm-8 col-sm-offset-1">
         <slot name="message">
-          team2work.at verwendet Cookies um Ihnen das bestmögliche Surferlebnis zu ermöglichen. <br/>
-          Um auch weiterhin unseren Webauftritt besser zu gestalten, analysieren wir anomysiert das Surfverhalten unserer Nutzer und Nutzerinnen. <br/>
-          Weiterführende Information finden Sie <a href="https://publications.europa.eu/de/cookies-notice">hier</a>.
+          Wir verwenden Cookies, um Ihnen den bestmöglichen Service zu gewährleisten.
+          Durch die Nutzung unserer Website, sind Sie mit der Cookie-Nutzung einverstanden.<br/>
+          Weiterführende Information finden Sie <a href="https://publications.europa.eu/de/cookies-notice" target="_blank">hier</a>.
         </slot>
       </div>
       <div class="Cookie__buttons col-sm-1">
@@ -90,6 +90,7 @@ export default {
   .Cookie__content.col-sm-8.col-sm-offset-1 > a {
       font-size: 14px;
       color: $color-white;
+      text-decoration: underline;
       &:hover {
           text-decoration: underline;
       }
