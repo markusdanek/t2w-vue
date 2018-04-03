@@ -12,14 +12,24 @@
                 </ul>
             </div>
             <div class="apply-btn">
-                <a :href="`mailto:${job.email}?subject=Bewerbung als ${job.title}`" class="btn-more-jobs btn btn-danger btn-block">
-                    Jetzt bewerben
+              <div v-if="!checked">
+                <a class="btn-more-jobs btn btn-danger btn-block" :disabled="!checked">
+                  Jetzt bewerben
                 </a>
+              </div>
+              <div v-else>
+                <a :href="`mailto:${job.email}?subject=Bewerbung als ${job.title}`" class="btn-more-jobs btn btn-danger btn-block">
+                  Jetzt bewerben
+                </a>
+              </div>
             </div>
             <div class="apply-btn" v-show="authenticated">
                 <router-link :to="{name:'JobEdit', params:{id:job._id}}" :class="['btn-edit-job btn btn-success btn-block']">
                     Diesen Job bearbeiten
                 </router-link>
+            </div>
+            <div class="gdpr">
+              <input type="checkbox" id="checkbox" v-model="checked"> Ich akzeptiere die <router-link to="/impress">Datenschutzbestimmungen</router-link>
             </div>
         </div>
     </div>
@@ -39,6 +49,7 @@
                 maxSalary: [],
                 authenticated: false,
                 loading: false,
+                checked: false,
             }
         },
         mounted() {
@@ -104,6 +115,18 @@
             }
             a.btn-edit-job {
                 @extend %ghost-button-green;
+            }
+        }
+        .gdpr {
+            @include rem((margin-top: 20px));
+            @include rem(font-size, 18px);
+            a {
+              @include rem(font-size, 18px);
+              color: $color-red-t2w;
+              font-family: $font-regular, "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+              &:disabled {
+                border: 2px solid $color-black-medium;
+              }
             }
         }
     }
