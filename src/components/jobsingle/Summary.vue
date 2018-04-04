@@ -14,12 +14,12 @@
             <div class="apply-btn">
               <div v-if="!checked">
                 <a class="btn-more-jobs btn btn-danger btn-block" :disabled="!checked">
-                  Jetzt bewerben
+                  Jetzt per E-Mail bewerben
                 </a>
               </div>
               <div v-else>
-                <a :href="`mailto:${job.email}?subject=Bewerbung als ${job.title}`" class="btn-more-jobs btn btn-danger btn-block">
-                  Jetzt bewerben
+                <a :href="`mailto:${job.email}?subject=Bewerbung als ${job.title} (HP)`" class="btn-more-jobs btn btn-danger btn-block">
+                  Jetzt per E-Mail bewerben
                 </a>
               </div>
             </div>
