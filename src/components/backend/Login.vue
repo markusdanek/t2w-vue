@@ -75,12 +75,13 @@
                 self.lock.on('authenticated', (authResult) => {
                     localStorage.setItem('id_token', authResult.idToken);
                     localStorage.setItem('timestamp', new Date());
-                    self.lock.getProfile(authResult.idToken, (error, profile) => {
-                        if (error) {
-                            return;
-                        }
-                        localStorage.setItem('profile', JSON.stringify(profile));
-                        self.authenticated = true;
+                    self.lock.getUserInfo(authResult.accessToken, function(error, profile) {
+                      if (error) {
+                        return;
+                      }
+                      localStorage.setItem('accessToken', authResult.accessToken);
+                      localStorage.setItem('profile', JSON.stringify(profile));
+                      self.authenticated = true;
                     });
                 });
 
