@@ -19,6 +19,7 @@
     "vue-markdown": "^2.2.4",
     "vue-multiselect": "^2.1.0",
     "vue-router": "^3.0.1",
+    "vue-router-sitemap": "0.0.2",
     "vue-scroll-behavior": "^0.2.0",
     "vuex": "^3.0.1"
   },
