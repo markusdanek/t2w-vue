@@ -12,13 +12,13 @@
               </div>
               <div class="title block">
                 <h2>
-                      {{job.title}} m/w
-                  </h2>
+                  {{job.title}} m/w
+                </h2>
               </div>
               <div class="title block" v-if="job.subTitle">
                 <h2>
-                      {{job.subTitle}}
-                  </h2>
+                  {{job.subTitle}}
+                </h2>
               </div>
               <div class="intro block subtext" v-if="job.subText">
                 <vue-markdown :source="job.subText"></vue-markdown>
@@ -50,44 +50,44 @@
                 <h4>Ihre persönliche Ansprechpartnerin</h4>
                 <ul>
                   <div v-if="job.contact == 'Martina Brandtmayer'">
-                    <li><img src="../assets/images/team/martina-brandtmayer.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><img src="../assets/images/team/martina-brandtmayer.jpg" class="photo rounded-circle" width="150" /></li>
                     <li><span>{{job.contact}}</span></li>
                     <li>T: <span>+43 (0)676/ 507 45 47</span></li>
                     <li><a href="mailto:martina.brandtmayer@team2work.at">
-                      martina.brandtmayer@team<span class="two">2</span>work.at
-                    </a></li>
+                        martina.brandtmayer@team<span class="two">2</span>work.at
+                      </a></li>
                   </div>
                   <div v-if="job.contact == 'Monika Hrib'">
-                    <li><img src="../assets/images/team/monika-hrib.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><img src="../assets/images/team/monika-hrib.jpg" class="photo rounded-circle" width="150" /></li>
                     <li><span>{{job.contact}}</span></li>
                     <li>T: <span>+43 (0)676/ 754 03 54</span></li>
                     <li><a href="mailto:monika.hrib@team2work.at">
-                      monika.hrib@team<span class="two">2</span>work.at
-                    </a></li>
+                        monika.hrib@team<span class="two">2</span>work.at
+                      </a></li>
                   </div>
                   <div v-if="job.contact == 'Melanie Friedrich'">
-                    <li><img src="../assets/images/team/melanie-friedrich.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><img src="../assets/images/team/melanie-friedrich.jpg" class="photo rounded-circle" width="150" /></li>
                     <li><span>{{job.contact}}</span></li>
                     <li>T: <span>+43 (0)676/ 758 29 58</span></li>
                     <li><a href="mailto:melanie.friedrich@team2work.at">
-                      melanie.friedrich@team<span class="two">2</span>work.at
-                    </a></li>
+                        melanie.friedrich@team<span class="two">2</span>work.at
+                      </a></li>
                   </div>
                   <div v-if="job.contact == 'Melanie Friedrich, MA'">
-                    <li><img src="../assets/images/team/melanie-friedrich.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><img src="../assets/images/team/melanie-friedrich.jpg" class="photo rounded-circle" width="150" /></li>
                     <li><span>{{job.contact}}</span></li>
                     <li>T: <span>+43 (0)676/ 758 29 58</span></li>
                     <li><a href="mailto:melanie.friedrich@team2work.at">
-                      melanie.friedrich@team<span class="two">2</span>work.at
-                    </a></li>
+                        melanie.friedrich@team<span class="two">2</span>work.at
+                      </a></li>
                   </div>
                   <div v-if="job.contact == 'Irina Friedrich-Ahrer'">
-                    <li><img src="../assets/images/team/irina-friedrich.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><img src="../assets/images/team/irina-friedrich.jpg" class="photo rounded-circle" width="150" /></li>
                     <li><span>{{job.contact}}</span></li>
                     <li>T: <span>+43 (0)676/ 404 94 87</span></li>
                     <li><a href="mailto:irina.friedrich@team2work.at">
-                      irina.friedrich@team<span class="two">2</span>work.at
-                    </a></li>
+                        irina.friedrich@team<span class="two">2</span>work.at
+                      </a></li>
                   </div>
                 </ul>
               </div>
@@ -104,13 +104,13 @@
               <div class="apply-btn">
                 <div v-if="!checked">
                   <a class="btn-more-jobs btn btn-danger btn-block" :disabled="!checked" :class="{ 'disabled': !checked }">
-                  Jetzt per E-Mail bewerben
-                </a>
+                    Jetzt per E-Mail bewerben
+                  </a>
                 </div>
                 <div v-else>
                   <a :href="`mailto:${job.email}?subject=Bewerbung als ${job.title} (HP)`" class="btn-more-jobs btn btn-danger btn-block">
-                  Jetzt per E-Mail bewerben
-                </a>
+                    Jetzt per E-Mail bewerben
+                  </a>
                 </div>
               </div>
               <div class="apply-btn" v-show="authenticated">
@@ -205,6 +205,31 @@ export default {
     }
   },
   mixins: [JobMethods],
+  metaInfo: {
+    title: 'team2work',
+    titleTemplate: '%s » Stellenbeschreibung',
+    meta: [{
+        'property': 'og:title',
+        'content': 'team2work',
+        'template': chunk => `${chunk} - Stellenbeschreibung`,
+        'vmid': 'og:title'
+      },
+      {
+        'property': 'og:site_name',
+        'content': 'team2work',
+        'template': chunk => `${chunk} - Stellenbeschreibung`,
+        'vmid': 'og:site_name'
+      },
+      {
+        'property': 'og:type',
+        'content': 'website'
+      },
+      {
+        'property': 'og:url',
+        'content': 'https://team2work.at/#/jobs'
+      }
+    ]
+  }
 }
 </script>
 
