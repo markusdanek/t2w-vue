@@ -2,7 +2,7 @@
 <div class="cookie" :class="containerPosition" v-if="isOpen">
   <b-container>
   <b-row>
-    <b-col cols="10">
+    <b-col cols="12" md="10">
       <div class="cookie__content">
         <slot name="message">
           Wir verwenden Cookies, um Ihnen den bestmöglichen Service zu gewährleisten.
@@ -11,7 +11,7 @@
         </slot>
       </div>
     </b-col>
-    <b-col cols="2">
+    <b-col cols="12" md="2">
       <div class="cookie__buttons">
         <a :href="buttonLink" v-if="buttonLink" :class="buttonClass">{{ buttonLinkText }}</a>
         <div class="btn" :class="buttonClass" @click="accept">{{ buttonText }}</div>

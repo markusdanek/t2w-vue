@@ -6,7 +6,7 @@
       <b-container>
         <b-col>
           <b-row>
-            <b-col>
+            <b-col cols="12" md="6">
               <div class="stuff">
                 <h2>Adresse:</h2>
                 <ul>
@@ -19,13 +19,13 @@
                   </li>
                 </ul>
               </div>
-              <div class="item">
+              <div class="stuff">
                 <h2>Bewerbungen</h2>
                 <p>
                   <b>Mo bis Fr</b> zwischen <b>09:00</b> und <b>12:00</b> Uhr.<br /> Persönliche Beratung und Besprechung nach <u>vorheriger telefonischer</u> Vereinbarung.
                 </p>
               </div>
-            </b-col>
+            </b-col cols="12" md="6">
             <b-col>
               <gmap-map :center="center" :zoom="16" style="width: 100%; height: 500px" :options="{scrollwheel: false}">
                 <gmap-marker v-for="m in markers" :key="m.id" :position="m.position" :clickable="false" :draggable="false">

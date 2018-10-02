@@ -54,6 +54,22 @@ export default {
 }
 
 .img-fluid {
-    max-height: 300px !important;
+    max-height: 250px !important;
+}
+
+@media (max-width: 992px) {
+  .img-fluid {
+      max-height: 300px !important;
+  }
+}
+@media (max-width: 768px) {
+  .img-fluid {
+      max-height: 400px !important;
+  }
+}
+@media (max-width: 576px) {
+  .img-fluid {
+      max-height: 450px !important;
+  }
 }
 </style>

@@ -55,9 +55,9 @@
         border-right: 10px solid $color-red-t2w;
         background: #f9f9f9 !important;
     }
-    .container {
-        padding: 0px !important;
-    }
+    // .container {
+    //     padding: 0px !important;
+    // }
     @media (min-width: 1200px) {
         .wrapper {
             max-width: 1600px !important;

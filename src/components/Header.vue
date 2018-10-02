@@ -1,37 +1,32 @@
 <template>
-
 <b-navbar toggleable="md" fixed="top" id="t2w-nav">
   <b-container>
-  <b-navbar-toggle target="nav_collapse" class="ml-auto"></b-navbar-toggle>
-
-  <b-navbar-brand href="/">
-    <router-link to="/">&nbsp;</router-link>
-  </b-navbar-brand>
-
-  <b-collapse is-nav id="nav_collapse">
-
-    <b-navbar-nav class="ml-auto">
-      <b-nav-item>
-        <router-link to="/unternehmen">Für Unternehmen</router-link>
-      </b-nav-item>
-      <b-nav-item>
-        <router-link to="/bewerber">Für Bewerber</router-link>
-      </b-nav-item>
-      <b-nav-item>
-        <router-link to="/ueber">Über Uns</router-link>
-      </b-nav-item>
-      <b-nav-item>
-        <router-link to="/jobs">Jobs</router-link>
-      </b-nav-item>
-      <b-nav-item>
-        <router-link to="/kontakt">Kontakt</router-link>
-      </b-nav-item>
-      <b-nav-item >
-        <router-link to="/backend/list">Backend</router-link>
-      </b-nav-item>
-    </b-navbar-nav>
-
-  </b-collapse>
+    <b-navbar-toggle target="nav_collapse" class="ml-auto"></b-navbar-toggle>
+    <b-navbar-brand href="/">
+      <router-link to="/">&nbsp;</router-link>
+    </b-navbar-brand>
+    <b-collapse is-nav id="nav_collapse">
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item>
+          <router-link to="/unternehmen" @click.native="closeMenu(event)">Für Unternehmen</router-link>
+        </b-nav-item>
+        <b-nav-item>
+          <router-link to="/bewerber" @click.native="closeMenu(event)">Für Bewerber</router-link>
+        </b-nav-item>
+        <b-nav-item>
+          <router-link to="/ueber" @click.native="closeMenu(event)">Über Uns</router-link>
+        </b-nav-item>
+        <b-nav-item>
+          <router-link to="/jobs" @click.native="closeMenu(event)">Jobs</router-link>
+        </b-nav-item>
+        <b-nav-item>
+          <router-link to="/kontakt" @click.native="closeMenu(event)">Kontakt</router-link>
+        </b-nav-item>
+        <b-nav-item v-if="authenticated" @click.native="closeMenu(event)">
+          <router-link to="/backend/list">Backend</router-link>
+        </b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
   </b-container>
 </b-navbar>
 </template>
@@ -48,27 +43,39 @@ export default {
     window.addEventListener('scroll', this.updateScroll);
   },
   created() {
-
+    this.checkAuth();
   },
   methods: {
     updateScroll() {
       let nav = document.getElementById("t2w-nav");
       this.scrollPosition = window.scrollY;
-      if (this.scrollPosition >= 62){
+      if (this.scrollPosition >= 62) {
         nav.classList.add("active");
       } else {
         nav.classList.remove("active");
       }
+    },
+    checkAuth() {
+      if (localStorage.getItem('profile')) {
+        this.authenticated = true;
+      } else {
+        this.authenticated = false;
+      }
+    },
+    closeMenu(event) {
+      console.log(event);
+      let navBar = document.getElementById('nav_collapse');
+      navBar.classList.remove('show');
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-  @import "@/styles/util/util.scss";
+@import "@/styles/util/util.scss";
 
-  // General
-  #t2w-nav {
+// General
+#t2w-nav {
     @include transition(all 0.5s ease);
     min-height: 90px;
     .navbar-brand {
@@ -81,94 +88,94 @@ export default {
         z-index: -999999;
     }
     a {
-      color: #FFF;
-      &:hover {
-        color: $color-red-t2w;
-      }
+        color: #FFF;
+        &:hover {
+            color: $color-red-t2w;
+        }
     }
 
     // Scroll
     &.active {
-      @include transition(all 0.5s ease);
-      background: #FFF;
-      min-height: 90px;
-      .navbar-brand {
-          @include transition(all 0.5s ease);
-          background: url("../assets/images/logo/team2work.svg") no-repeat;
-          width: 130px;
-          height: 80px;
-          position: absolute;
-          top: 5px;
-      }
-      a {
-        color: #000;
-        &:hover {
-          color: $color-red-t2w;
-        }
-      }
-      .navbar-collapse.collapse.show {
+        @include transition(all 0.5s ease);
         background: #FFF;
-        margin-top: 50px;
-        text-align: right;
-      }
-    }
-  }
-
-  // Large
-  @media (max-width: 992px) {
-    #t2w-nav {
-      .navbar-brand {
-        width: 130px;
-        top: 5px;
-      }
-    }
-  }
-
-  // Medium
-  @media (max-width: 768px) {
-    #t2w-nav {
-      background: #FFF;
-      border-bottom: 1px solid #F0F0F0;
-      .navbar-brand {
-        background: url("../assets/images/logo/team2work.svg") no-repeat;
-        width: 130px;
-        top: 5px;
-      }
-      a {
-        color: #000;
-        &:hover {
-          color: $color-red-t2w;
+        min-height: 90px;
+        .navbar-brand {
+            @include transition(all 0.5s ease);
+            background: url("../assets/images/logo/team2work.svg") no-repeat;
+            width: 130px;
+            height: 80px;
+            position: absolute;
+            top: 5px;
         }
-      }
-      .navbar-collapse.collapse.show {
-        background: #FFF;
-        margin-top: 50px;
-        text-align: right;
-      }
-    }
-  }
-
-  // Small
-  @media (max-width: 576px) {
-    #t2w-nav {
-      background: #FFF;
-      border-bottom: 1px solid #F0F0F0;
-      .navbar-brand {
-        background: url("../assets/images/logo/team2work.svg") no-repeat;
-        width: 130px;
-        top: 5px;
-      }
-      a {
-        color: #000;
-        &:hover {
-          color: $color-red-t2w;
+        a {
+            color: #000;
+            &:hover {
+                color: $color-red-t2w;
+            }
         }
-      }
-      .navbar-collapse.collapse.show {
-        background: #FFF;
-        margin-top: 50px;
-        text-align: right;
-      }
+        .navbar-collapse.collapse.show {
+            background: #FFF;
+            margin-top: 50px;
+            // text-align: right !important;
+        }
     }
-  }
+}
+
+// Large
+@media (max-width: 992px) {
+    #t2w-nav {
+        .navbar-brand {
+            width: 130px;
+            top: 5px;
+        }
+    }
+}
+
+// Medium
+@media (max-width: 768px) {
+    #t2w-nav {
+        background: #FFF;
+        border-bottom: 1px solid #F0F0F0;
+        .navbar-brand {
+            background: url("../assets/images/logo/team2work.svg") no-repeat;
+            width: 130px;
+            top: 5px;
+        }
+        a {
+            color: #000;
+            &:hover {
+                color: $color-red-t2w;
+            }
+        }
+        .navbar-collapse.collapse.show {
+            background: #FFF;
+            margin-top: 50px;
+            // text-align: right;
+        }
+    }
+}
+
+// Small
+@media (max-width: 576px) {
+    #t2w-nav {
+        background: #FFF;
+        border-bottom: 1px solid #F0F0F0;
+        .navbar-brand {
+            background: url("../assets/images/logo/team2work.svg") no-repeat;
+            width: 130px;
+            top: 5px;
+        }
+        a {
+            color: #000;
+            &:hover {
+                color: $color-red-t2w;
+            }
+        }
+        .navbar-collapse.collapse.show {
+            background: #FFF;
+            margin-top: 50px;
+            // text-align: right;
+        }
+    }
+}
 </style>

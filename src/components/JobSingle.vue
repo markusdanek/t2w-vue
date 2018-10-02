@@ -1,11 +1,11 @@
 <template>
 <div>
-  <HeroSmall title="Dürfen wir einander vorstellen?" />
+  <HeroSmall title="Dürfen wir einander vorstellen?" template="jobs" />
   <div class="wrapper">
     <b-container>
       <div class="job-block">
         <b-row>
-          <b-col cols="8">
+          <b-col cols="12" md="8">
             <div class="job-detail">
               <div class="intro block">
                 <vue-markdown :source="job.introText"></vue-markdown>
@@ -44,7 +44,7 @@
             </div>
           </b-col>
 
-          <b-col cols="4">
+          <b-col cols="12" md="4">
             <div class="more-info">
               <div class="box">
                 <h4>Eckdaten</h4>
