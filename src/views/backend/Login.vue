@@ -5,11 +5,13 @@
     <b-container>
       <b-row>
         <div class="loggedin" v-show="authenticated">
-          <b-col>
-            <div class="media">
+          <div class="media">
+            <b-col>
               <div class="media-left">
                 <img :src="this.getUserPicture()" alt="userPicture" width="150px;">
               </div>
+            </b-col>
+            <b-col>
               <div class="media-body">
                 <h2 class="media-heading">Hallo {{this.getLoggedInUserName()}}</h2>
                 <p>Du bist bereits eingeloggt!</p>
@@ -20,9 +22,11 @@
                 </p>
                 <button class="btn-logout btn btn-xs" @click="logout()">Abmelden</button>
               </div>
-            </div>
-          </b-col>
+            </b-col>
+          </div>
         </div>
+      </b-row>
+      <b-row class="justify-content-md-center">
         <div class="login" v-show="!authenticated">
           <b-col>
             <h2>Sie sind zur Zeit nicht angemeldet!</h2>
@@ -122,8 +126,7 @@ export default {
   metaInfo: {
     title: 'team2work',
     titleTemplate: '%s » Login',
-    meta: [
-      {
+    meta: [{
         'property': 'og:title',
         'content': 'team2work',
         'template': chunk => `${chunk} - Login`,

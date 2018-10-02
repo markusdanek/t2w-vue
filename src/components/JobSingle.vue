@@ -46,6 +46,51 @@
 
           <b-col cols="12" md="4">
             <div class="more-info">
+              <div class="box t2w-team" v-if="job.contact">
+                <h4>Ihre persönliche Ansprechpartnerin</h4>
+                <ul>
+                  <div v-if="job.contact == 'Martina Brandtmayer'">
+                    <li><img src="../assets/images/team/martina-brandtmayer.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><span>{{job.contact}}</span></li>
+                    <li>T: <span>+43 (0)676/ 507 45 47</span></li>
+                    <li><a href="mailto:martina.brandtmayer@team2work.at">
+                      martina.brandtmayer@team<span class="two">2</span>work.at
+                    </a></li>
+                  </div>
+                  <div v-if="job.contact == 'Monika Hrib'">
+                    <li><img src="../assets/images/team/monika-hrib.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><span>{{job.contact}}</span></li>
+                    <li>T: <span>+43 (0)676/ 754 03 54</span></li>
+                    <li><a href="mailto:monika.hrib@team2work.at">
+                      monika.hrib@team<span class="two">2</span>work.at
+                    </a></li>
+                  </div>
+                  <div v-if="job.contact == 'Melanie Friedrich'">
+                    <li><img src="../assets/images/team/melanie-friedrich.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><span>{{job.contact}}</span></li>
+                    <li>T: <span>+43 (0)676/ 758 29 58</span></li>
+                    <li><a href="mailto:melanie.friedrich@team2work.at">
+                      melanie.friedrich@team<span class="two">2</span>work.at
+                    </a></li>
+                  </div>
+                  <div v-if="job.contact == 'Melanie Friedrich, MA'">
+                    <li><img src="../assets/images/team/melanie-friedrich.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><span>{{job.contact}}</span></li>
+                    <li>T: <span>+43 (0)676/ 758 29 58</span></li>
+                    <li><a href="mailto:melanie.friedrich@team2work.at">
+                      melanie.friedrich@team<span class="two">2</span>work.at
+                    </a></li>
+                  </div>
+                  <div v-if="job.contact == 'Irina Friedrich-Ahrer'">
+                    <li><img src="../assets/images/team/irina-friedrich.jpg" class="photo rounded-circle" width="150"/></li>
+                    <li><span>{{job.contact}}</span></li>
+                    <li>T: <span>+43 (0)676/ 404 94 87</span></li>
+                    <li><a href="mailto:irina.friedrich@team2work.at">
+                      irina.friedrich@team<span class="two">2</span>work.at
+                    </a></li>
+                  </div>
+                </ul>
+              </div>
               <div class="box">
                 <h4>Eckdaten</h4>
                 <ul>
@@ -53,7 +98,7 @@
                   <li>Arbeitszeit: <span>{{job.hours}}</span></li>
                   <li>Arbeitsort: <span>{{job.area}}</span></li>
                   <li>Bruttomonatsgehalt: <span>{{job.salary}} {{job.salaryText}}</span></li>
-                  <li>Referenznummer: <span>{{job.referenceId}}</span></li>
+                  <li v-if="job.referenceId">Referenznummer: <span>{{job.referenceId}}</span></li>
                 </ul>
               </div>
               <div class="apply-btn">
@@ -230,6 +275,20 @@ export default {
                         color: $color-black-medium;
                     }
                 }
+            }
+        }
+    }
+    .t2w-team {
+        margin-bottom: 25px;
+        text-align: center;
+        h4 {
+            text-align: left;
+        }
+        a {
+            color: $color-black;
+            font-weight: normal;
+            &:hover {
+                text-decoration: 1px solid $color-red-t2w;
             }
         }
     }
