@@ -18,19 +18,19 @@
             <div class="form-group">
               <label for="title" class="control-label">Titel der Anzeige</label>
               <b-col>
-                <input type='text' name='title' v-model="job.title" class='form-control' placeholder='1 Software Entwickler (m/w)' required>
+                <input type='text' name='title' v-model="job.title" class='form-control' required>
               </b-col>
             </div>
             <div class="form-group">
               <label for="salary" class="control-label">Gehalt</label>
               <b-col>
-                <input type='text' name='salary' v-model="job.salary" class='form-control' placeholder='3000'>
+                <input type='text' name='salary' v-model="job.salary" class='form-control'>
                 </b-col>
             </div>
             <div class="form-group">
               <label for="hours" class="control-label">Wochenstunden</label>
               <b-col>
-                <input type='text' name='hours' v-model="job.hours" class='form-control' placeholder='38,5h/Woche' required>
+                <input type='text' name='hours' v-model="job.hours" class='form-control' required>
                   </b-col>
             </div>
             <hr>
@@ -49,73 +49,73 @@
             <div class="form-group">
               <label for="referenceId" class="col-sm-3 control-label">Referenznummer</label>
               <b-col>
-                <input type='text' name='referenceId' v-model="job.referenceId" class='form-control' placeholder='1234567K'>
+                <input type='text' name='referenceId' v-model="job.referenceId" class='form-control'>
                         </b-col>
             </div>
             <div class="form-group">
               <label for="title" class="col-sm-3 control-label">Zweiter Titel</label>
               <b-col>
-                <input type='text' name='title' v-model="job.subTitle" class='form-control' placeholder=''>
+                <input type='text' name='title' v-model="job.subTitle" class='form-control'>
                           </b-col>
             </div>
             <div class="form-group">
               <label for="subText" class="col-sm-3 control-label">Job Untertitel (nach Titel der Anzeige)</label>
               <b-col>
-                <input type='text' name='subText' v-model="job.subText" class='form-control' placeholder='.. mit spannenden Weiterentwicklungsmöglichkeiten'>
+                <input type='text' name='subText' v-model="job.subText" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="minSalary" class="col-sm-3 control-label">Min. Gehalt</label>
               <b-col>
-                <input type='text' name='minSalary' v-model="job.minSalary" class='form-control' placeholder='800'>
+                <input type='text' name='minSalary' v-model="job.minSalary" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="maxSalary" class="col-sm-3 control-label">Max. Gehalt</label>
               <b-col>
-                <input type='text' name='maxSalary' v-model="job.maxSalary" class='form-control' placeholder='8000'>
+                <input type='text' name='maxSalary' v-model="job.maxSalary" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="salaryText" class="col-sm-3 control-label">Zusatztext f&uuml;r Gehalt</label>
               <b-col>
-                <input type='text' name='salaryText' v-model="job.salaryText" class='form-control' placeholder='mit der M&ouml;glichkeit auf &Uuml;berzahlung...'>
+                <input type='text' name='salaryText' v-model="job.salaryText" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="area" class="col-sm-3 control-label">Gebiet</label>
               <b-col>
-                <input type='text' name='area' v-model="job.area" class='form-control' placeholder='W, NÖ, BGLD'>
+                <input type='text' name='area' v-model="job.area" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="introText" class="col-sm-3 control-label">Einleitungstext</label>
               <b-col>
-                <input type='text' name='introText' v-model="job.introText" class='form-control' placeholder='Unser Kunde, ein namhaftes Handelsunternehmen, in der Abfall- und Entsorgungstechnik sucht...'>
+                <input type='text' name='introText' v-model="job.introText" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="moreInfoText" class="col-sm-3 control-label">Unser Kunde bietet</label>
               <b-col>
-                <input type='text' name='moreInfoText' v-model="job.moreInfoText" class='form-control' placeholder='Als Benefit erwartet Sie...'>
+                <input type='text' name='moreInfoText' v-model="job.moreInfoText" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="email" class="col-sm-3 control-label">E-Mail</label>
               <b-col>
-                <input type='email' name='email' v-model="job.email" class='form-control' placeholder='bewerbung@team2work.at'>
+                <input type='email' name='email' v-model="job.email" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="contact" class="col-sm-3 control-label">Ansprechperson</label>
               <b-col>
-                <input type='text' name='contact' v-model="job.contact" class='form-control' placeholder='Martina Brandtmayer'>
+                <input type='text' name='contact' v-model="job.contact" class='form-control'>
                             </b-col>
             </div>
             <div class="form-group">
               <label for="expectText" class="col-sm-3 control-label">Erwartungstext</label>
               <b-col>
-                <input type='text' name='expectText' v-model="job.expectText" class='form-control' placeholder='Es erwartet Sie eine interessante und vielseitige Tätigkeit in einem technisch...'>
+                <input type='text' name='expectText' v-model="job.expectText" class='form-control'>
                             </b-col>
             </div>
             <hr>
@@ -123,7 +123,7 @@
             <div class="form-group" v-for="qual in qualification" :key="qual.id">
               <label for="qualifications" class="col-sm-3 control-label">Qualifikation</label>
               <b-col>
-                <input type='text' name='qualifications' v-model="qual.text" class='form-control' placeholder='Sie verfügen..'>
+                <input type='text' name='qualifications' v-model="qual.text" class='form-control'>
                             </b-col>
             </div>
             <b-row>
@@ -136,7 +136,7 @@
             <div class="form-group" v-for="resp in responsibility" :key="resp.id">
               <label for="responsibility" class="col-sm-3 control-label">Aufgaben</label>
               <b-col>
-                <input type='text' name='responsibility' v-model="resp.text" class='form-control' placeholder='Sie müssen...'>
+                <input type='text' name='responsibility' v-model="resp.text" class='form-control'>
                             </b-col>
             </div>
             <b-row>
