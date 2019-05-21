@@ -21,7 +21,7 @@
                         <tr v-for="job in jobs" :key="job.id">
                           <td class="jobtitle">
                             <router-link :to="{name:'JobSingle', params:{id:job._id}}">
-                              {{ job.title }} m/w
+                              {{ job.title }} m/w/d
                             </router-link>
                             <vue-markdown :source="job.introText | truncate(150)"></vue-markdown>
                           </td>
@@ -85,8 +85,7 @@ export default {
   metaInfo: {
     title: 'team2work',
     titleTemplate: '%s » Jobs',
-    meta: [
-      {
+    meta: [{
         'property': 'og:title',
         'content': 'team2work',
         'template': chunk => `${chunk} - Jobs`,

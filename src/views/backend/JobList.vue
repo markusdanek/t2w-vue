@@ -22,7 +22,7 @@
               <tr v-for="job in orderedJobs" :key="job.id">
                 <td>{{ job.referenceId }}</td>
                 <td class="jobtitle">
-                  {{ job.title }} m/w
+                  {{ job.title }} m/w/d
                 </td>
                 <td>
                   {{ job.area }}
@@ -102,8 +102,7 @@ export default {
   metaInfo: {
     title: 'team2work',
     titleTemplate: '%s » Jobübersicht',
-    meta: [
-      {
+    meta: [{
         'property': 'og:title',
         'content': 'team2work',
         'template': chunk => `${chunk} - Jobübersicht`,
