@@ -44,6 +44,9 @@
                 <div class="checkbox">
                   <input type="checkbox" @change="onChange('standard', $event)"> Der Standard
                 </div>
+                <div class="checkbox">
+                  <input type="checkbox" @change="onChange('karriere', $event)"> Karriere
+                </div>
               </b-col>
             </div>
             <div class="form-group">
