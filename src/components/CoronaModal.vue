@@ -52,6 +52,12 @@ export default {
       color: $color-red-t2w;
       text-align: center;
     }
+    h5 {
+      font-size: 20px;
+    }
+    .modal-title {
+      font-size: 20px;
+    }
     a {
       color: $color-red-t2w;
     }
