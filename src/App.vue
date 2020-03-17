@@ -4,6 +4,7 @@
         <router-view></router-view>
         <AppFooter />
         <cookie-message></cookie-message>
+        <CoronaModal />
     </div>
 </template>
 
@@ -11,11 +12,12 @@
     import AppHeader from '@/components/Header.vue'
     import AppFooter from '@/components/Footer.vue'
     import CookieMessage from '@/components/CookieMessage.vue'
+    import CoronaModal from '@/components/CoronaModal.vue'
 
     export default {
         name: 'app',
         components: {
-          AppHeader, AppFooter, CookieMessage
+          AppHeader, AppFooter, CookieMessage, CoronaModal
         },
         methods: {
             checkTimestampAge() {
