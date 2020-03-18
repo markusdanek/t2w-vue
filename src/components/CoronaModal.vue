@@ -1,9 +1,10 @@
 <template lang="html">
   <div>
-    <b-modal @hide="accept" size="lg" hide-footer="true" v-model="modalShow" id="modal-corona" title="Wichtige Information zu COVID-19">
+    <b-modal @hide="accept" size="lg" hide-footer v-model="modalShow" id="modal-corona" title="Wichtige Information zu COVID-19">
       <h5 class="corona-header">Wir legen großen Wert auf <b>Ihre</b> Gesundheit.</h5>
       <p class="my-4">
         Aus diesem Grund wurde unsere Arbeitsweise an die Maßnahmen angepasst und arbeiten im Home-Office für Sie weiter.
+        Unser Büro in Wien bleibt bis auf weiteres geschlossen.
         <br/><br/>
         Wir sind trotzdem telefonisch und per E-Mail erreichbar und bitten Jobsuchende Ihre Bewerbungsunterlagen per E-Mail zu übermitteln.
         <br/><br/>

@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <HeroLarge/>
+    <CoronaBanner />
     <JobList/>
     <Testimonial/>
     <Service/>
@@ -13,10 +14,11 @@ import HeroLarge from '@/components/HeroLarge.vue'
 import JobList from '@/components/JobListSmall.vue'
 import Testimonial from '@/components/Testimonial.vue'
 import Service from '@/components/Service.vue'
+import CoronaBanner from '@/components/CoronaBanner.vue'
 export default {
   name: 'home',
   components: {
-    HeroLarge, JobList, Testimonial, Service
+    HeroLarge, JobList, Testimonial, Service, CoronaBanner
   },
   metaInfo: {
     title: 'team2work',
