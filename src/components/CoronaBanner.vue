@@ -1,17 +1,17 @@
 <template>
 <div class="wrapper">
   <div class="corona">
-    <p><b>Coronavirus COVID-19</b>: Aus gegebem Anlass bitten wir Sie uns nur per Telefon oder per E-Mail zu erreichen.</p>
+    <p><b>Coronavirus COVID-19</b>: Aus gegebenem Anlass bitten wir Sie uns nur per Telefon oder per E-Mail zu erreichen.</p>
     <p class="info">Für mehr Informationen klicken Sie bitte hier: </p>
     <button v-b-modal.modal-1>Informationen</button>
   </div>
   <b-modal id="modal-1" size="lg" hide-footer title="Wichtige Information zu COVID-19">
     <h5 class="corona-header">Wir legen großen Wert auf <b>Ihre</b> Gesundheit.</h5>
     <p class="my-4">
-      Aus diesem Grund wurde unsere Arbeitsweise an die Maßnahmen angepasst und arbeiten im Home-Office für Sie weiter.
-      Unser Büro in Wien bleibt bis auf weiteres geschlossen.
+      Aus diesem Grund wurde unsere Arbeitsweise an die Maßnahmen angepasst.
+      Unser Büro in Wien bleibt bis auf weiteres geschlossen, dennoch arbeiten wir im Home-Office für Sie weiter.
       <br/><br/>
-      Wir sind trotzdem telefonisch und per E-Mail erreichbar und bitten Jobsuchende Ihre Bewerbungsunterlagen per E-Mail zu übermitteln.
+      Wir sind trotzdem telefonisch, sowie per E-Mail erreichbar und bitten Jobsuchende Ihre Bewerbungsunterlagen elektronisch zu übermitteln.
       <br/><br/>
       Bewerbungsgespräche werden <u>ausschließlich</u> über das Telefon abgehalten.
       <br/><br/>

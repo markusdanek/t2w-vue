@@ -3,10 +3,10 @@
     <b-modal @hide="accept" size="lg" hide-footer v-model="modalShow" id="modal-corona" title="Wichtige Information zu COVID-19">
       <h5 class="corona-header">Wir legen großen Wert auf <b>Ihre</b> Gesundheit.</h5>
       <p class="my-4">
-        Aus diesem Grund wurde unsere Arbeitsweise an die Maßnahmen angepasst und arbeiten im Home-Office für Sie weiter.
-        Unser Büro in Wien bleibt bis auf weiteres geschlossen.
+        Aus diesem Grund wurde unsere Arbeitsweise an die Maßnahmen angepasst.
+        Unser Büro in Wien bleibt bis auf weiteres geschlossen, dennoch arbeiten wir im Home-Office für Sie weiter.
         <br/><br/>
-        Wir sind trotzdem telefonisch und per E-Mail erreichbar und bitten Jobsuchende Ihre Bewerbungsunterlagen per E-Mail zu übermitteln.
+        Wir sind trotzdem telefonisch, sowie per E-Mail erreichbar und bitten Jobsuchende Ihre Bewerbungsunterlagen elektronisch zu übermitteln.
         <br/><br/>
         Bewerbungsgespräche werden <u>ausschließlich</u> über das Telefon abgehalten.
         <br/><br/>
