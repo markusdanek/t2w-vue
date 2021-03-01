@@ -8,7 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "upload": "npm run build; s3-deploy './dist/**' --cwd './dist/' --signatureVersion v4 --bucket www.team2work.at"
+    "upload": "npm run build; s3-deploy './dist/**' --cwd './dist/' --signatureVersion v4 --bucket www.team2work.at --region eu-central-1"
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
@@ -27,7 +27,7 @@
     "es6-promise": "^4.2.5",
     "jquery": "^3.3.1",
     "lodash": "^4.17.11",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.0.1",
     "vue-analytics": "^5.16.0",
     "vue-awesome": "^3.1.3",

@@ -19,48 +19,48 @@
 
 <script>
 export default {
-  name: 'corona-modal',
+  name: "corona-modal",
   data() {
     return {
-      modalShow: false
-    }
+      modalShow: false,
+    };
   },
   created() {
-    if (!this.getVisited() === true) {
-      this.modalShow = true
-    }
+    // if (!this.getVisited() === true) {
+    //   this.modalShow = true
+    // }
   },
   methods: {
     setVisited() {
-      localStorage.setItem('corona:accepted', true)
+      localStorage.setItem("corona:accepted", true);
     },
     getVisited() {
-      return localStorage.getItem('corona:accepted')
+      return localStorage.getItem("corona:accepted");
     },
     accept() {
-      this.setVisited()
-      this.modalShow = false
-      this.$emit('accept')
-    }
-  }
-}
+      this.setVisited();
+      this.modalShow = false;
+      this.$emit("accept");
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-  @import "@/styles/util/util.scss";
-  #modal-corona {
-    h5.corona-header {
-      color: $color-red-t2w;
-      text-align: center;
-    }
-    h5 {
-      font-size: 20px;
-    }
-    .modal-title {
-      font-size: 20px;
-    }
-    a {
-      color: $color-red-t2w;
-    }
+@import "@/styles/util/util.scss";
+#modal-corona {
+  h5.corona-header {
+    color: $color-red-t2w;
+    text-align: center;
   }
+  h5 {
+    font-size: 20px;
+  }
+  .modal-title {
+    font-size: 20px;
+  }
+  a {
+    color: $color-red-t2w;
+  }
+}
 </style>
